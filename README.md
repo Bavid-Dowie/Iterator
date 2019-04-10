@@ -1,1 +1,1 @@
-# P3---Liz-Maddy-Sean-Jeremy
+Iterator: A Coding Blog - Project 3
