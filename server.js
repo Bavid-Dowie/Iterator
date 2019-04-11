@@ -9,7 +9,7 @@ app.use(bodyParser.json())
 
 //import models
 const {User, Article} = require ('./models')
-const PORT = process.env.PORT || 5432   
+const PORT = process.env.PORT || 3001   
 
 app.get('/', (req, res) => res.send('Sup yo'))
 
