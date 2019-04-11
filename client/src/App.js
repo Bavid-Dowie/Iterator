@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Switch, Route } from 'react-router-dom'
 import Article from './components/Article'
 import CreateArticle from './components/CreateArticle'
 import Footer from './components/Footer'
@@ -16,10 +17,21 @@ class App extends Component {
       articles: []
     }
   }
-  
+
   render() {
     return (
       <div className="App">
+        <Switch>
+          <Route 
+            exact path='/user/:id'
+            render={(props) => <UserProfile {...props}/>}
+          />
+
+          <Route 
+            exact path='/article/:id'
+            render={(props) => <Article {...props}/>}
+          />
+        </Switch>
       </div>
     );
   }
