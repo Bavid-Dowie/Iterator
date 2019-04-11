@@ -1,7 +1,7 @@
-import React,  { Component } from 'react';
+import React, { Component } from 'react';
 
 class Homepage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             name: "",
@@ -11,8 +11,8 @@ class Homepage extends Component {
             userPassword: ""
         }
     }
-    render(){
-        return(
+    render() {
+        return (
             <div className="homepage">
                 <div className="homepage-header">
                     <h1>Iterator.</h1>
@@ -32,7 +32,7 @@ class Homepage extends Component {
                 </div>
                 <div className="homepage-body">
                     <div className="signup-description">
-                        <p>Iterator is a place to share new ideas and solutions on today's greatest coding challenges. <br/> Sign up here to create an account!</p>
+                        <p>Iterator is a place to share new ideas and solutions on today's greatest coding challenges. <br /> Sign up here to create an account!</p>
                     </div>
                     <div className="signup-form">
                         <form>
