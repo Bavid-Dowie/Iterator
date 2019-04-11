@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 // connext to database
-const db = new Sequelize('postgres://localhost:4567/iterator_db', {
+const db = new Sequelize('postgres://localhost:5432/iterator_db', {
   dialect: 'postgres'
 });
 // define user model
