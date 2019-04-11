@@ -4,7 +4,7 @@ import Header from './Header'
 class Article extends Component {
   render() {
     return (
-      <div>
+      <div className="article">
         <Header />
         <h1>Article Title</h1>
         <h3>Byline</h3>
