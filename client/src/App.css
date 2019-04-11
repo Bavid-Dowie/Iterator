@@ -1,3 +1,20 @@
+.footer {
+    position: absolute; 
+    left: 0 ;
+    right: 0; 
+    bottom: 0;
+}
+
+.footer__ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__li {
+    margin: 15px;
+
 .header {
     border-bottom: 1px solid black;
 }
