@@ -24,3 +24,8 @@
 .footer__li {
     margin: 15px;
 }
+
+.article {
+    text-align: center;
+    margin-top: 50px;
+}
