@@ -4,7 +4,9 @@
   "description": "Iterator: A Coding Blog - Project 3",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd client && npm test",
+    "dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,6 @@
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.9.1",
-    "pg": "^7.9.0",
     "react-router-dom": "^5.0.0",
     "sequelize": "^5.3.1"
   },
