@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserProfile from './components/UserProfile'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <UserProfile />
       </div>
     );
   }
