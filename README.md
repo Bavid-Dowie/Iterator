@@ -11,3 +11,6 @@ Iterator: A Coding Blog - Project 3
 ![wireframe3](/wireframes/wf3.png)
 
 ![wireframe4](/wireframes/wf4.png)
+
+## USER STORIES:
+![User Stories](/user_stories.png)
