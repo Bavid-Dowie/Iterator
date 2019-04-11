@@ -1,7 +1,7 @@
 Iterator: A Coding Blog - Project 3
 
 ## ERD
-![Iterator ERD](/iterator-timeline.png)
+![Iterator ERD](/iterator_erd.png)
 
 ![Iterator Timeline](/iterator-timeline.png)
 
