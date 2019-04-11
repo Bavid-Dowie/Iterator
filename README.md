@@ -1,5 +1,8 @@
 Iterator: A Coding Blog - Project 3
 
+## ERD
+![Iterator ERD](/Iterator App ERD - Group M3J.png)
+
 ![Iterator Timeline](/iterator-timeline.png)
 
 ## WIREFRAMES:
