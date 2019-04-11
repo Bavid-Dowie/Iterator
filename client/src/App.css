@@ -14,4 +14,12 @@
 
 .footer__li {
     margin: 15px;
+
+.header {
+    border-bottom: 1px solid black;
+}
+
+.header__h1 {
+    margin: 30px;
+    font-size: 50px;
 }
