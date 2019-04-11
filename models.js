@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize');
 // connext to database
-const db = new Sequelize('postgres://localhost:4567/iterator_db', {
-    dialect: 'postgres'
-  });
+const db = new Sequelize('postgres://localhost:5432/iterator_db', {
+  dialect: 'postgres'
+});
 // define user model
-const Users = db.define('user', {
+const User = db.define('user', {
     name: {
         type: Sequelize.STRING
     },
@@ -22,7 +22,7 @@ const Users = db.define('user', {
     }
 });
 // define article model
-const Articles = db.define('article', {
+const Article = db.define('article', {
     title: {
         type: Sequelize.STRING
     },
@@ -36,13 +36,13 @@ const Articles = db.define('article', {
 
 // associations
 
-Users.hasmany(Articles, { onDelete: 'cascade' })
-Articles.belongsto(Users)
+User.hasMany(Article, { onDelete: 'cascade' })
+Article.belongsTo(User)
 
 // export modules
 
 module.exports = {
     db,
-    Users,
-    Articles
+    User,
+    Article
 }
