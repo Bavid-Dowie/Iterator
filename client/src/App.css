@@ -1,0 +1,30 @@
+.userprofile__userinfo {
+    margin-left: 50px;
+    margin-top: 20%;
+}
+
+.userprofile__h3 {
+    margin-left: 50px;
+}
+
+.userprofile__btn--create {
+    margin-left: 50px;
+}
+
+.userprofile__articlescontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+}
+
+.userprofile__article {
+    width: 200px;
+    height: 150px;
+    background-color: blue;
+    margin: 20px;
+}
