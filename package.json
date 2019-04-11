@@ -1,0 +1,25 @@
+{
+  "name": "Iterator",
+  "version": "1.0.0",
+  "description": "Iterator: A Coding Blog - Project 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bavid-Dowie/Iterator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bavid-Dowie/Iterator/issues"
+  },
+  "homepage": "https://github.com/Bavid-Dowie/Iterator#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pg": "^7.9.0",
+    "sequelize": "^5.3.1"
+  }
+}
