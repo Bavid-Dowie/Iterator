@@ -16,9 +16,7 @@ app.get('/', (req, res) => res.send('Sup yo'))
 app.get('/users', async (req, res) => {
     try {
         const allUsers = await User.findAll({raw: true})
-        res.json(
-            allUsers
-        )
+        res.json(allUsers)
     } catch (error) {
         res.status(500).json({
             message: error.message
@@ -29,9 +27,7 @@ app.get('/users', async (req, res) => {
 app.get('/articles', async (req, res) => {
     try {
         const allArticles = await Article.findAll({raw: true})
-        res.json({
-            allArticles
-        })
+        res.json(allArticles)
     } catch (error) {
         res.status(500).json({
           message: error.message  
@@ -83,7 +79,7 @@ app.get('/articles/:id', async (req, res) => {
 
 app.put('/users/:id', async (req, res) => {
     try {
-        const userId = parseInt(req.params.id)
+        const userId = req.params.id
         const updatedUser = {
             name: req.body.name,
             email: req.body.email,
@@ -98,20 +94,43 @@ app.put('/users/:id', async (req, res) => {
     }
 })
 
-app.put('articles/:id', async (req, res) => {
+app.put('/articles/:id', async (req, res) => {
     try {
         const articleId = parseInt(req.params.id)
         const updateArticle = {
             title: req.body.title,
             author: req.body.author,
-            content: req.body.content
+            content: req.body.content,
+            userId: req.body.userId
         }
-        const article = await Article.create(updateArticle)
+        const article = await Article.update(updateArticle, {where: {id: articleId}})
         res.json(article)
     } catch (error) {
         res.status(500)
     }
 })
+
+app.delete('/users/:id', async (req, res) => {
+    try {
+      const id = req.params.id;
+      const user = await User.destroy({ where: {id: id} });
+      res.json(user);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: error.message});
+    }
+  });
+
+  app.delete('/articles/:id', async (req, res) => {
+    try {
+      const id = req.params.id;  
+      const article = await Article.destroy({ where: {id: id} });
+      res.json(article);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: error.message});
+    }
+  });
 
 
 

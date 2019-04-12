@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cd client && npm test",
     "dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
