@@ -1,20 +1,44 @@
 import React, { Component } from 'react';
 
+const url = `http://localhost:3001/articles`
+
 class CreateArticle extends Component {
     constructor(props){
         super(props)
         this.state = {
             title: "",
-            author: "",
+            // author: "",
             content: ""
         }
+        this.
+    }
+    // 
+    createArticle = event => {
+        const { title, content, value } = event.target;
+        this.setState({
+            [title]: value,
+            [content]: value
+        })
+    }
+
+    submitArticle = event => {
+        event.preventDefault()
+        let data = {
+            title: this.state.title,
+            // name: this.state.author,
+            content: this.state.content
+        }
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data),
+        })
     }
 
     render(){
         return(
             <div>
                 <h2>Create A New Article</h2>
-                <form>
+                <form onSubmit={props.createA}>
                     <div className="field">
                         <label htmlFor="title">Title: </label>
                         <input className="input" type="text" name="title" placeholder="enter title" value={this.state.title}></input>
