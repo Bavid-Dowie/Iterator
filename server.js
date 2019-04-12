@@ -77,6 +77,16 @@ app.get('/articles/:id', async (req, res) => {
     }
 })
 
+app.get('/articles/:userId', async (req, res) => {
+    try {
+        const userId = parseInt(req.params.userId)
+        const userAritcles = await Article.findAll({where: {userId: userId}})
+        res.json(userAritcles)
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+})
+
 app.put('/users/:id', async (req, res) => {
     try {
         const userId = req.params.id
@@ -109,6 +119,7 @@ app.put('/articles/:id', async (req, res) => {
         res.status(500)
     }
 })
+
 
 app.delete('/users/:id', async (req, res) => {
     try {
