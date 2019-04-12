@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Link } from 'react-router-dom'
 import Article from './components/Article'
-import CreateArticle from './components/CreateArticle'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Homepage from './components/Homepage'
-import UpdateArticle from './components/UpdateArticle'
 import UserProfile from './components/UserProfile'
-import UpdateUser from './components/UpdateUser'
 import { decode } from 'jwt-decode';
 
 class App extends Component {
@@ -71,22 +68,33 @@ class App extends Component {
     this.handleLogin()
   }
 
-
+getUser() {
+  fetch(`http:localhost:3001/users/${currentUser.id}`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+    this.setState({currentUser: id})
+  })
+}
 
   render() {
     return (
       <div className="App">
 
-        <Homepage />
-        <UserProfile />
-        <UpdateUser />
-
         <Switch>
           <Route 
-            exact path='/users/:id'
-            render={(props) => <UserProfile {...props}/>}
+          exact path='/'
+          render={(props) => <Homepage handleLogin={this.handleLogin} handleRegister={this.handleRegister} />}
           />
+          <Route 
+            exact path='/users/:id'
+            render={(props) => 
+            <UserProfile 
+              {...props}  
+              currentUser = {this.state.currentUser} 
 
+            />}
+          />
           <Route 
             exact path='/articles/:id'
             render={(props) => <Article {...props}/>}
