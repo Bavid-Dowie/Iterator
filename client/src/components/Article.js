@@ -32,7 +32,11 @@ class Article extends Component {
     return (
       <div className="article-page">
         <Header />
-       
+        <div className="article-details">
+          <h3>{this.state.article.title}</h3>
+          <p>{this.state.article.author}</p>
+          <div>{this.state.article.content}</div>
+        </div>
       </div>
     )
   }
