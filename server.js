@@ -109,7 +109,7 @@ app.put('articles/:id', async (req, res) => {
         const article = await Article.create(updateArticle)
         res.json(article)
     } catch (error) {
-        
+        res.status(500)
     }
 })
 
