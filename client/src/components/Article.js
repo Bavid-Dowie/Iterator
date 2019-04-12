@@ -37,6 +37,7 @@ class Article extends Component {
           <p>{this.state.article.author}</p>
           <div>{this.state.article.content}</div>
         </div>
+        <UpdateArticle id={this.props.match.params.id} article={this.state.article} getArticle={this.getArticle}/>
       </div>
     )
   }
