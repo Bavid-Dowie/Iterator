@@ -8,9 +8,8 @@ import Header from './components/Header'
 import Homepage from './components/Homepage'
 import UpdateArticle from './components/UpdateArticle'
 import UserProfile from './components/UserProfile'
-// punycode or jwt-decode??
-import { decode } from 'punycode';
-
+import UpdateUser from './components/UpdateUser'
+import { decode } from 'jwt-decode';
 
 class App extends Component {
   constructor(props) {
@@ -38,7 +37,7 @@ class App extends Component {
         'Content-Type': 'application/json'
       }
     };
-    return fetch(`${baseURL}/auth/login`, opts)
+    return fetch(`http://localhost:3001/auth/login`, opts)
       .then(resp => resp.json())
   }
 
@@ -51,7 +50,7 @@ class App extends Component {
         'Content-Type': 'application/json'
       }
     };
-    return fetch(`${baseURL}/auth/register`, opts)
+    return fetch(`http://localhost:3001/auth/register`, opts)
       .then(resp => resp.json())
   }
 
@@ -76,6 +75,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+        <Homepage />
+        <UserProfile />
+        <UpdateUser />
+        <Article />
+
         <Switch>
           <Route 
             exact path='/user/:id'
