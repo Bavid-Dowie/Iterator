@@ -10,10 +10,11 @@ class CreateArticle extends Component {
             // author: "",
             content: ""
         }
-        this.
+        this.onArticleCreate = this.onArticleCreate.bind(this)
+        this.onArticleCreate = this.onArticleCreate.bind(this)
     }
     // 
-    createArticle = event => {
+    onArticleCreate = event => {
         const { title, content, value } = event.target;
         this.setState({
             [title]: value,
@@ -21,14 +22,15 @@ class CreateArticle extends Component {
         })
     }
 
-    submitArticle = event => {
+    onArticleSubmit = async (event) => {
         event.preventDefault()
         let data = {
             title: this.state.title,
             // name: this.state.author,
             content: this.state.content
+
         }
-        fetch(url, {
+        await fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),
         })
@@ -38,7 +40,7 @@ class CreateArticle extends Component {
         return(
             <div>
                 <h2>Create A New Article</h2>
-                <form onSubmit={props.createA}>
+                <form onSubmit={this.onArticleSubmit}>
                     <div className="field">
                         <label htmlFor="title">Title: </label>
                         <input className="input" type="text" name="title" placeholder="enter title" value={this.state.title}></input>
