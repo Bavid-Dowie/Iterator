@@ -14,7 +14,7 @@ class UpdateArticle extends Component {
         this.onUpdateChange = this.onUpdateChange.bind(this)
         this.onUpdateSubmit = this.onUpdateSubmit.bind(this)
     }
-
+    
     onUpdateChange = (e) => {
         const { name, value } = e.target
         this.setState({
