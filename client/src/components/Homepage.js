@@ -3,12 +3,7 @@ import React, { Component } from 'react';
 class Homepage extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            name: "",
-            email: "",
-            newPassword: "",
-            username: "",
-            userPassword: ""
+
         }
     }
     render() {
@@ -17,7 +12,10 @@ class Homepage extends Component {
                 <div className="homepage-header">
                     <h1>Iterator.</h1>
                     <div className="login">
-                        <form>
+                        <form onSubmit={(e) => {
+                            e.preventDefault()
+                            props.handleLogin()
+                        }}>
                             <div className="login-field">
                                 <label htmlFor="username">username</label>
                                 <input className="input" type="text" name="username" placeholder="username" value={this.state.username}></input>
