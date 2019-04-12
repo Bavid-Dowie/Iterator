@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './Header'
+import UpdateUser from './components/UpdateUser'
 
 class UserProfile extends Component {
   render() {
@@ -20,6 +21,7 @@ class UserProfile extends Component {
           <div className="userprofile__article"></div>
           <div className="userprofile__article"></div>
         </div>
+        <UpdateUser id={this.props.match.params.id} user={this.state.article} getArticle={this.getArticle}/>
       </div>
     )
   }
