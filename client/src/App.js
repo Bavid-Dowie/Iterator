@@ -23,6 +23,10 @@ class App extends Component {
         password: ""
       }
     }
+    this.loginUser = this.loginUser.bind(this)
+    this.registerUser = this.registerUser.bind(this)
+    this.handleLogin = this.handleLogin.bind(this)
+    this.handleRegister = this.handleRegister.bind(this)
   }
 
 // login user post function
@@ -60,9 +64,12 @@ class App extends Component {
     localStorage.setItem("jwt", userData.token)
   }
 
-
-
-
+//handle register function, passed into Homepage, calls registerUser and handleLogin
+  async handleRegister(e) {
+    e.preventDefault()
+    await registerUser(this.state.authFormData)
+    this.handleLogin()
+  }
 
 
 
