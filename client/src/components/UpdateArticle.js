@@ -26,9 +26,9 @@ class UpdateArticle extends Component {
         e.preventDefault()
         let data = {
             id: this.props.id,
-            title: this.state.title || props.article.title,
-            author: this.state.author || props.article.author,
-            content: this.state.content || props.article.content
+            title: this.state.title || this.props.article.title,
+            author: this.state.author || this.props.article.author,
+            content: this.state.content || this.props.article.content
         }
 
         await fetch(`${url}${this.props.id}`, {

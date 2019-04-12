@@ -13,6 +13,7 @@ import { decode } from 'jwt-decode';
 
 class App extends Component {
   constructor(props) {
+    super(props)
     this.state = {
       users: [],
       articles: [],
@@ -56,7 +57,7 @@ class App extends Component {
 
 //handle login function, passed into Homepage, calls loginUser
   async handleLogin() {
-    const userData = await loginUser(this.state.authFormData)
+    const userData = await this.loginUser(this.state.authFormData)
     this.setState({
       currentUser: decode(userData.token)
     })
@@ -66,7 +67,7 @@ class App extends Component {
 //handle register function, passed into Homepage, calls registerUser and handleLogin
   async handleRegister(e) {
     e.preventDefault()
-    await registerUser(this.state.authFormData)
+    await this.registerUser(this.state.authFormData)
     this.handleLogin()
   }
 
@@ -79,16 +80,15 @@ class App extends Component {
         <Homepage />
         <UserProfile />
         <UpdateUser />
-        <Article />
 
         <Switch>
           <Route 
-            exact path='/user/:id'
+            exact path='/users/:id'
             render={(props) => <UserProfile {...props}/>}
           />
 
           <Route 
-            exact path='/article/:id'
+            exact path='/articles/:id'
             render={(props) => <Article {...props}/>}
           />
         </Switch>
