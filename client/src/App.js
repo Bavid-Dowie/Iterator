@@ -85,10 +85,6 @@ handleLoginSubmit () {
   .then(this.setState({redirect: true}))
 }
 
-getUser() {
-}
-
-
   render() {
     return (
       <div className="App">
