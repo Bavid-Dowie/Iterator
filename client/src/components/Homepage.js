@@ -1,6 +1,10 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom'
 
 const Homepage = (props) => {
+    if (props.redirect === true) {
+        return <Redirect to={`/users/${props.currentUser}`} />   
+       }
     return (
         <div className="homepage">
             <div className="homepage-header">
@@ -8,11 +12,19 @@ const Homepage = (props) => {
                 <div className="login">
                     <form onSubmit={(e) => {
                         e.preventDefault()
-                        props.handleLogin()
+                        // props.handleLogin()
+                        props.handleLoginSubmit()
                     }}>
                         <div className="login-field">
                             <label htmlFor="username">username</label>
-                            <input className="input" type="text" name="username" placeholder="username" value={props.username}></input>
+                            <input 
+                                className="input" 
+                                type="text" 
+                                name="username" 
+                                placeholder="username" 
+                                value={props.currentUser}
+                                onChange={props.loginChange}
+                            ></input>
                         </div>
                         <div className="login-field">
                             <label htmlFor="password">password</label>
