@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import Header from './Header'
-import UpdateUser from './components/UpdateUser'
+import UpdateUser from './UpdateUser'
+import CreateArticle from './CreateArticle'
 
 class UserProfile extends Component {
   render() {
+    console.log(this.props.userObject)
     return (
       <div>
         <Header />
         <div className="userprofile__userinfo">
-          <h2 className="userprofile__h2">User Name</h2>
-          <h3 className="userprofile__h3">User Profile</h3>
+          <h2 className="userprofile__h2">{this.props.userObject.name}</h2>
+          <h3 className="userprofile__h3">{this.props.userObject.bio}</h3>
         </div>
         <h3 className="userprofile__h3">Articles</h3>
         <button className="userprofile__btn--create">+ CREATE A NEW ARTICLE</button>
@@ -21,7 +23,8 @@ class UserProfile extends Component {
           <div className="userprofile__article"></div>
           <div className="userprofile__article"></div>
         </div>
-        <UpdateUser id={this.props.match.params.id} user={this.state.article} getArticle={this.getArticle}/>
+        <UpdateUser id={this.props.match.params.username}/>
+        <CreateArticle/>
       </div>
     )
   }

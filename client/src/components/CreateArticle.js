@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 
-const url = `http://localhost:3001/articles`
+const url = `https://iterator.herokuapp.com/articles`
 
 class CreateArticle extends Component {
     constructor(props) {
         super(props)
         this.state = {
             title: "",
-            author: "",
+            // author: "",
             content: ""
         }
         this.onArticleCreate = this.onArticleCreate.bind(this)
         this.onArticleSubmit = this.onArticleSubmit.bind(this)
     }
-    // 
-    onArticleCreate = event => {
-        const { title, content, value } = event.target;
+
+    onArticleCreate = (e) => {
+        const { name, value } = e.target
         this.setState({
-            [title]: value,
-            [content]: value
+            [name]: value
         })
     }
 
@@ -28,7 +27,6 @@ class CreateArticle extends Component {
             title: this.state.title,
             name: this.state.author,
             content: this.state.content
-
         }
         await fetch(url, {
             method: 'POST',
@@ -40,37 +38,42 @@ class CreateArticle extends Component {
     }
 
     render() {
+        console.log(this.state.author)
         return (
             <div className="create-article">
                 <h2>Create A New Article</h2>
                 <form onSubmit={this.onArticleSubmit} id="userArticle">
                     <div className="field">
                         <label htmlFor="title">Title: </label>
-                        <input className="input"
+                        <input onChange={this.onArticleCreate}
+                            className="input"
                                type="text"
                                name="title"
                                placeholder="enter title"
                                value={this.state.title}
                         />
                     </div>
-                    <div className="field">
+                   {/*  <div className="field">
                         <label htmlFor="author">By: </label>
-                        <input className="input"
-                               type="text"
-                               name="author"
-                               placeholder="enter names"
-                               value={this.state.author}
+                        <input onChange={this.onArticleCreate}
+                            className="input"
+                            type="text"
+                            name="author"
+                            placeholder="change names"
+                            value={this.state.author}
                         />
-                    </div>
+                    </div> */}
                     <div className="field">
-                        <label htmlFor="article">Article Body: </label>
-                        <input className="input"
+                        <label htmlFor="content">Article Body: </label>
+                        <input onChange={this.onArticleCreate}
+                               className="input"
                                type="text"
-                               name="article"
+                               name="content"
                                placeholder="enter text here"
                                value={this.state.content}
-                        />
+                        />                        
                     </div>
+                    <button input="field" type="submit">Create New Article</button>
                 </form>
             </div>
         )
