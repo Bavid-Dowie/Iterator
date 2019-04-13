@@ -14,7 +14,9 @@ class App extends Component {
     this.state = {
       users: [],
       articles: [],
-      currentUser: null,
+      currentUser: "",
+      userObject: "",
+      redirect: false,
       authFormData: {
         username: "",
         password: ""
@@ -24,6 +26,9 @@ class App extends Component {
     this.registerUser = this.registerUser.bind(this)
     this.handleLogin = this.handleLogin.bind(this)
     this.handleRegister = this.handleRegister.bind(this)
+    this.loginChange = this.loginChange.bind(this)
+    this.getUser = this.getUser.bind(this)
+    this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
   }
 
 // login user post function
@@ -39,6 +44,7 @@ class App extends Component {
       .then(resp => resp.json())
   }
 
+handleLoginInput = (loginData) => {}
 //register user post function
   registerUser = (registerData) => {
     const opts = {
@@ -68,14 +74,20 @@ class App extends Component {
     this.handleLogin()
   }
 
-getUser() {
-  fetch(`http:localhost:3001/users/${currentUser.id}`)
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-    this.setState({currentUser: id})
-  })
+loginChange (username) {
+  this.setState({currentUser: username.target.value})
 }
+
+handleLoginSubmit () {
+  fetch(`https://iterator-m3j.herokuapp.com/users/1`)
+  .then(res => res.json())
+  .then(json => this.setState({userObject: json}))
+  .then(this.setState({redirect: true}))
+}
+
+getUser() {
+}
+
 
   render() {
     return (
@@ -84,15 +96,25 @@ getUser() {
         <Switch>
           <Route 
           exact path='/'
-          render={(props) => <Homepage handleLogin={this.handleLogin} handleRegister={this.handleRegister} />}
+          render={(props) => 
+          <Homepage
+            redirect={this.state.redirect}
+            currentUser={this.state.currentUser}
+            handleLoginSubmit={this.handleLoginSubmit}
+            userObject={this.state.userObject}
+            loginChange={this.loginChange}
+            handleLogin={this.handleLogin} 
+            handleRegister={this.handleRegister} 
+            />}
           />
           <Route 
-            exact path='/users/:id'
+            exact path='/users/:username'
             render={(props) => 
             <UserProfile 
-              {...props}  
-              currentUser = {this.state.currentUser} 
-
+              {...props}
+              getUser = {this.getUser}
+              userObject = {this.state.userObject}  
+              users = {this.state.users} 
             />}
           />
           <Route 
