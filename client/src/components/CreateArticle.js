@@ -7,7 +7,7 @@ class CreateArticle extends Component {
         super(props)
         this.state = {
             title: "",
-            // author: "",
+            author: "",
             content: ""
         }
         this.onArticleCreate = this.onArticleCreate.bind(this)
@@ -25,7 +25,7 @@ class CreateArticle extends Component {
         event.preventDefault()
         let data = {
             title: this.state.title,
-            name: this.state.author,
+            author: this.state.author,
             content: this.state.content
         }
         await fetch(url, {
@@ -38,7 +38,6 @@ class CreateArticle extends Component {
     }
 
     render() {
-        console.log(this.state.author)
         return (
             <div className="create-article">
                 <h2>Create A New Article</h2>
@@ -53,16 +52,16 @@ class CreateArticle extends Component {
                                value={this.state.title}
                         />
                     </div>
-                   {/*  <div className="field">
+                    <div className="field">
                         <label htmlFor="author">By: </label>
                         <input onChange={this.onArticleCreate}
                             className="input"
                             type="text"
                             name="author"
-                            placeholder="change names"
+                            placeholder="enter name"
                             value={this.state.author}
                         />
-                    </div> */}
+                    </div>
                     <div className="field">
                         <label htmlFor="content">Article Body: </label>
                         <input onChange={this.onArticleCreate}
