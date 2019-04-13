@@ -26,7 +26,7 @@ class CreateArticle extends Component {
         event.preventDefault()
         let data = {
             title: this.state.title,
-            // name: this.state.author,
+            name: this.state.author,
             content: this.state.content
 
         }
