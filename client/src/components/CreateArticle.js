@@ -33,14 +33,17 @@ class CreateArticle extends Component {
         await fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
     }
 
     render(){
         return(
-            <div>
+            <div className="create-article">
                 <h2>Create A New Article</h2>
-                <form onSubmit={this.onArticleSubmit}>
+                <form onSubmit={this.onArticleSubmit} id="userArticle">
                     <div className="field">
                         <label htmlFor="title">Title: </label>
                         <input className="input" type="text" name="title" placeholder="enter title" value={this.state.title}></input>
