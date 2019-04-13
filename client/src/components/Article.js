@@ -3,7 +3,7 @@ import { withRouter } from 'react-router'
 import Header from './Header'
 import UpdateArticle from './UpdateArticle';
 
-const url = 'http:localhost:3001/articles/'
+const url = 'https://iterator.herokuapp.com/articles/'
 
 class Article extends Component {
   constructor(props){
@@ -15,19 +15,17 @@ class Article extends Component {
 
   getArticle(){
     fetch(`${url}${this.props.match.params.id}`)
-      .then(response => {
-        return response.json()
-      })
+      .then(response => response.json())
       .then(data => {
-        console.log(data.article)
-        this.setState({ article: data.article })
+        console.log(data)
+        this.setState({ article: data })
       })
   }
 
   componentDidMount(){
     this.getArticle()
   }
-
+  
   render() {
     return (
       <div className="article-page">
@@ -38,6 +36,10 @@ class Article extends Component {
           <div>{this.state.article.content}</div>
         </div>
         <UpdateArticle id={this.props.match.params.id} article={this.state.article} getArticle={this.getArticle}/>
+        <button id={this.state.article.id} onClick={(e => {
+          this.props.onArticleDelete(e)
+          this.props.history.push(`/users/${this.props.currentUser}`)
+        })}>Delete Article</button>
       </div>
     )
   }

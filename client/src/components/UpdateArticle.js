@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-const url = 'http:localhost:3001/articles/'
+const url = 'https://iterator.herokuapp.com/articles/'
 
 class UpdateArticle extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: "",
             title: "",
             author: "",
             content: ""
@@ -14,7 +13,7 @@ class UpdateArticle extends Component {
         this.onUpdateChange = this.onUpdateChange.bind(this)
         this.onUpdateSubmit = this.onUpdateSubmit.bind(this)
     }
-    
+
     onUpdateChange = (e) => {
         const { name, value } = e.target
         this.setState({
@@ -31,7 +30,8 @@ class UpdateArticle extends Component {
             content: this.state.content || this.props.article.content
         }
 
-        await fetch(`${url}${this.props.id}`, {
+        console.log(data.id)
+        await fetch(`${url}${data.id}`, {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {
@@ -42,31 +42,50 @@ class UpdateArticle extends Component {
         })
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <h2>Update Your Article</h2>
-                <form onSubmit={async (e) => {
+                <form onSubmit={async (e) =>{
                     await this.onUpdateSubmit(e)
-                    this.props.getArticle()
                     this.setState({
                         title: "",
                         author: "",
                         content: ""
                     })
+                    window.location.reload()
                 }}>
                     <div className="field">
                         <label htmlFor="title">Title: </label>
-                        <input onChange={this.onUpdateChange} className="input" type="text" name="title" placeholder="change title" value={this.state.title}></input>
+                        <input onChange={this.onUpdateChange}
+                            className="input"
+                            type="text"
+                            name="title"
+                            placeholder="change title"
+                            value={this.state.title}
+                        />
                     </div>
                     <div className="field">
                         <label htmlFor="author">By: </label>
-                        <input onChange={this.onUpdateChange} className="input" type="text" name="author" placeholder="change names" value={this.state.author}></input>
+                        <input onChange={this.onUpdateChange}
+                            className="input"
+                            type="text"
+                            name="author"
+                            placeholder="change names"
+                            value={this.state.author}
+                        />
                     </div>
                     <div className="field">
                         <label htmlFor="content">Article Body: </label>
-                        <textarea onChange={this.onUpdateChange} className="input" type="text" name="content" placeholder="update text here" value={this.state.content}/>
+                        <textarea onChange={this.onUpdateChange}
+                            className="input"
+                            type="text"
+                            name="content"
+                            placeholder="update text here"
+                            value={this.state.content}
+                        />
                     </div>
+                    <button type="submit" className="button">Submit</button>
                 </form>
             </div>
         )
