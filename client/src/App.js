@@ -79,9 +79,9 @@ loginChange (username) {
 }
 
 handleLoginSubmit () {
-  fetch(`https://iterator-m3j.herokuapp.com/users/1`)
+  fetch(`https://iterator.herokuapp.com/users/${this.state.currentUser}`)
   .then(res => res.json())
-  .then(json => this.setState({userObject: json}))
+  .then(json => this.setState({userObject: json[0]}))
   .then(this.setState({redirect: true}))
 }
 
