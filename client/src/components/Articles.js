@@ -27,7 +27,7 @@ class Articles extends Component {
     renderUserArticles(){
         const userArticles = this.state.userArticles
         return userArticles.map(article => {
-            return (<a href="#"><div>{article.title}</div></a>)
+            return (<a href="https://medium.com/"><div>{article.title}</div></a>)
         })
     }
 
