@@ -83,7 +83,7 @@ class App extends Component {
   handleLoginSubmit() {
     fetch(`https://iterator.herokuapp.com/users/${this.state.currentUser}`)
       .then(res => res.json())
-      .then(json => this.setState({ userObject: json[0] }))
+      .then(json => localStorage.setItem('userInfo', JSON.stringify(json[0])))
       .then(this.setState({ redirect: true }))
   }
 

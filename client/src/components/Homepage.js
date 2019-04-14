@@ -10,9 +10,9 @@ const Homepage = (props) => {
             <div className="homepage__header">
                 <h1 className="homepage__logo">Iterator.</h1>
                 <div className="homepage__login">
-                    <form onSubmit={(e) => {
+                    <form onSubmit={async (e) => {
                         e.preventDefault()
-                        props.handleLoginSubmit()
+                        await props.handleLoginSubmit()
                     }}>
                         <div className="login-field">
                             <p>Already have an account?</p>
