@@ -76,7 +76,7 @@ app.get('/articles/:id', async (req, res) => {
     }
 })
 
-app.get('/articles/:userId', async (req, res) => {
+app.get('/userarticles/:userId', async (req, res) => {
     try {
         const userId = parseInt(req.params.userId)
         const userAritcles = await Article.findAll({where: {userId: userId}})
