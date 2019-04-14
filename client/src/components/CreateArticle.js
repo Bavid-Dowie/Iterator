@@ -26,7 +26,8 @@ class CreateArticle extends Component {
         let data = {
             title: this.state.title,
             author: this.state.author,
-            content: this.state.content
+            content: this.state.content,
+            userId: this.props.userObject.id
         }
         await fetch(url, {
             method: 'POST',
