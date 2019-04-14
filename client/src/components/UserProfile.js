@@ -15,7 +15,7 @@ class UserProfile extends Component {
     this.renderUserArticles = this.renderUserArticles.bind(this)
   }
 
-  componentDidMount(){
+  async componentDidMount(){
       console.log('component mounting')
       this.getUserArticles()
   }
