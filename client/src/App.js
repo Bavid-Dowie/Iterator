@@ -3,7 +3,6 @@ import './App.css';
 import { Switch, Route, Link } from 'react-router-dom'
 import Article from './components/Article'
 import Footer from './components/Footer'
-import Header from './components/Header'
 import Homepage from './components/Homepage'
 import UserProfile from './components/UserProfile'
 import { decode } from 'jwt-decode';
@@ -106,7 +105,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <Switch>
           <Route
             exact path='/'
@@ -140,6 +138,7 @@ class App extends Component {
                 {...props} />}
           />
         </Switch>
+        <Footer />
       </div>
     );
   }

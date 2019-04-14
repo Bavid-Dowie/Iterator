@@ -46,10 +46,10 @@ class CreateArticle extends Component {
                         <label htmlFor="title">Title: </label>
                         <input onChange={this.onArticleCreate}
                             className="input"
-                               type="text"
-                               name="title"
-                               placeholder="enter title"
-                               value={this.state.title}
+                            type="text"
+                            name="title"
+                            placeholder="enter title"
+                            value={this.state.title}
                         />
                     </div>
                     <div className="field">
@@ -65,11 +65,11 @@ class CreateArticle extends Component {
                     <div className="field">
                         <label htmlFor="content">Article Body: </label>
                         <input onChange={this.onArticleCreate}
-                               className="input"
-                               type="text"
-                               name="content"
-                               placeholder="enter text here"
-                               value={this.state.content}
+                            className="input"
+                            type="text"
+                            name="content"
+                            placeholder="enter text here"
+                            value={this.state.content}
                         />                        
                     </div>
                     <button input="field" type="submit">Create New Article</button>
