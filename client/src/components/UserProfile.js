@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import UpdateUser from './UpdateUser'
 import CreateArticle from './CreateArticle'
+import { Link } from 'react-router-dom'
 
 const url = `https://iterator.herokuapp.com/userarticles/`
 
@@ -40,7 +41,7 @@ class UserProfile extends Component {
     if(this.state.userArticles.length >= 1) {
         console.log("render running")
     return this.state.userArticles.map(article => {
-        return (<a href="https://medium.com/"><div>{article.title}</div></a>)
+        return (<div key={article.id}><Link to={`/articles/${article.id}`}>{article.title}</Link> </div>)
     })
     }
   }
