@@ -10,19 +10,21 @@ class Articles extends Component {
         }
     }
 
-getUserArticles() {
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        this.setState({ userArticles: data.articles })
-    })
-}
+    getUserArticles() {
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            this.setState({ userArticles: data.articles })
+        })
+    }
 
     render(){
         return(
-            <div>
-
-            </div>
+            this.state.userArticles.map(article => {
+                <div className="user-article">
+                    <div>{article.title}</div>
+                </div>
+            })
         )
     }
 }
