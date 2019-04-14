@@ -1,4 +1,4 @@
-import React, { Component } from React
+import React, { Component } from 'react'
 
 const url = 'https://iterator.herokuapp.com/articles/:userId'
 
@@ -8,6 +8,8 @@ class Articles extends Component {
         this.state = {
             userArticles: []
         }
+        this.getUserArticles = this.getUserArticles.bind(this)
+        this.renderUserArticles = this.renderUserArticles.bind(this)
     }
 
     getUserArticles() {
@@ -22,13 +24,18 @@ class Articles extends Component {
         this.getUserArticles()
     }
 
+    renderUserArticles(){
+        const userArticles = this.state.userArticles
+        return userArticles.map(article => {
+            return (<a href="https://medium.com/"><div>{article.title}</div></a>)
+        })
+    }
+
     render(){
         return(
-            this.state.userArticles.map(article => {
-                <a href="#" className="user-article">
-                    <div>{article.title}</div>
-                </a>
-            })
+            <div className="user-article">
+                {this.renderUserArticles()}
+            </div>
         )
     }
 }
