@@ -8,6 +8,8 @@ class Articles extends Component {
         this.state = {
             userArticles: []
         }
+        this.getUserArticles = this.getUserArticles.bind(this)
+        this.renderUserArticles = this.renderUserArticles.bind(this)
     }
 
     getUserArticles() {
@@ -22,12 +24,17 @@ class Articles extends Component {
         this.getUserArticles()
     }
 
+    renderUserArticles(){
+        const userArticles = this.state.userArticles
+        return userArticles.map(article => {
+            return (<a href="#"><div>{article.title}</div></a>)
+        })
+    }
+
     render(){
         return(
             <div className="user-article">
-                {this.state.userArticles.map(article => {
-                    <a href="#">{article.title}</a>
-                })}
+                {this.renderUserArticles()}
             </div>
         )
     }
