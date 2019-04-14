@@ -7,16 +7,17 @@ const Homepage = (props) => {
        }
     return (
         <div className="homepage">
-            <div className="homepage-header">
-                <h1>Iterator.</h1>
-                <div className="login">
+            <div className="homepage__header">
+                <h1 className="homepage__logo">Iterator.</h1>
+                <div className="homepage__login">
                     <form onSubmit={(e) => {
                         e.preventDefault()
                         // props.handleLogin()
                         props.handleLoginSubmit()
                     }}>
                         <div className="login-field">
-                            <label htmlFor="username">username</label>
+                            <p>Already have an account?</p>
+                            <label htmlFor="username">Username </label>
                             <input 
                                 className="input" 
                                 type="text" 
@@ -27,23 +28,24 @@ const Homepage = (props) => {
                             ></input>
                         </div>
                         <div className="login-field">
-                            <label htmlFor="password">password</label>
+                            <label htmlFor="password">Password </label>
                             <input className="input" type="password" name="password" placeholder="password" value={props.userPassword}></input>
                         </div>
                         <button type="submit" className="button">Log in</button>
                     </form>
                 </div>
             </div>
-            <div className="homepage-body">
-                <div className="signup-description">
-                    <p>Iterator is a place to share new ideas and solutions on today's greatest coding challenges. <br /> Sign up here to create an account!</p>
+            <div className="homepage__body">
+                <div className="homepage__description">
+                    <p>Iterator is a place to <br/> share new ideas and solutions on <br/> today's greatest coding challenges. <br /> Sign up here to create an account!</p>
                 </div>
-                <div className="signup-form">
+                <div className="homepage__signup-form">
                     <form onSubmit={(e) => {
                         e.preventDefault()
                         props.handleRegister()
                     }}>
                         <div className="signup-field">
+                            <p>Register</p>
                             <label htmlFor="full name">Full name </label>
                             <input className="input" type="text" name="name" placeholder="enter your name" value={props.name}></input>
                         </div>
