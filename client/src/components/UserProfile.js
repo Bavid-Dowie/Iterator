@@ -8,7 +8,7 @@ class UserProfile extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      userObject: "",
+      userObject: [],
       userArticles: []
     }
     this.getUserArticles = this.getUserArticles.bind(this)
@@ -17,12 +17,19 @@ class UserProfile extends Component {
 
   async componentDidMount(){
       console.log('component mounting')
+      let storage = localStorage.getItem('userInfo')
+      if(storage === null) {
+        storage = []
+      } else {
+        storage = JSON.parse(storage)
+      }
+      await this.setState({userObject: storage})
       this.getUserArticles()
   }
 
   getUserArticles() {
-    console.log(this.props.userObject)
-    fetch(`${url}${this.props.userObject.id}`)
+    console.log(this.state.userObject)
+    fetch(`${url}${this.state.userObject.id}`)
     .then(response => response.json())
     .then(data => {
         this.setState({ userArticles: data })
@@ -39,12 +46,12 @@ class UserProfile extends Component {
   }
 
   render() {
-    console.log(this.props.userObject)
+    console.log(this.state.userObject)
     return (
       <div>
         <div className="userprofile__userinfo">
-          <h2 className="userprofile__h2">{this.props.userObject.name}</h2>
-          <h3 className="userprofile__h3">{this.props.userObject.bio}</h3>
+          <h2 className="userprofile__h2">{this.state.userObject.name}</h2>
+          <h3 className="userprofile__h3">{this.state.userObject.bio}</h3>
         </div>
         <h3 className="userprofile__h3">Articles</h3>
         <UpdateUser id={this.props.match.params.username} />
