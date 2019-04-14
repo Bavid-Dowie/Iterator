@@ -14,8 +14,12 @@ class Articles extends Component {
         fetch(url)
         .then(response => response.json())
         .then(data => {
-            this.setState({ userArticles: data.articles })
+            this.setState({ userArticles: data })
         })
+    }
+
+    componentDidMount(){
+        this.getUserArticles()
     }
 
     render(){

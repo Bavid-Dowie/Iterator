@@ -132,7 +132,12 @@ class App extends Component {
           />
           <Route
             exact path='/articles/:id'
-            render={(props) => <Article currentUser={this.state.currentUser} onArticleDelete={this.onArticleDelete} getArticles={this.getArticles} {...props} />}
+            render={(props) => 
+              <Article
+                currentUser={this.state.currentUser}
+                onArticleDelete={this.onArticleDelete}
+                getArticles={this.getArticles}
+                {...props} />}
           />
         </Switch>
       </div>
