@@ -17,7 +17,6 @@ class UserProfile extends Component {
   }
 
   async componentDidMount(){
-      console.log('component mounting')
       let storage = localStorage.getItem('userInfo')
       if(storage === null) {
         storage = []
@@ -29,7 +28,6 @@ class UserProfile extends Component {
   }
 
   getUserArticles() {
-    console.log(this.state.userObject)
     fetch(`${url}${this.state.userObject.id}`)
     .then(response => response.json())
     .then(data => {
@@ -39,7 +37,6 @@ class UserProfile extends Component {
 
   renderUserArticles() {
     if(this.state.userArticles.length >= 1) {
-        console.log("render running")
     return this.state.userArticles.map(article => {
         return (<div key={article.id}><Link to={`/articles/${article.id}`}>{article.title}</Link> </div>)
     })
@@ -47,7 +44,6 @@ class UserProfile extends Component {
   }
 
   render() {
-    console.log(this.state.userObject)
     return (
       <div>
         <div className="userprofile__userinfo">
@@ -57,11 +53,6 @@ class UserProfile extends Component {
         <h3 className="userprofile__h3">Articles</h3>
         <UpdateUser id={this.props.match.params.username} />
         <CreateArticle />
-        {/* <UserArticles 
-          userObject={this.state.userObject}
-          getUserArticles={this.getUserArticles}
-          renderUserArticles={this.renderUserArticles}
-        /> */}
         <div className="user-article">
                 {this.renderUserArticles()}
         </div>
