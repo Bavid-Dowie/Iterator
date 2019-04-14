@@ -25,9 +25,9 @@ class Articles extends Component {
     render(){
         return(
             this.state.userArticles.map(article => {
-                <div className="user-article">
+                <a href="#" className="user-article">
                     <div>{article.title}</div>
-                </div>
+                </a>
             })
         )
     }
