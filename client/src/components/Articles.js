@@ -1,4 +1,4 @@
-import React, { Component } from React
+import React, { Component } from 'react'
 
 const url = 'https://iterator.herokuapp.com/articles/:userId'
 
@@ -24,11 +24,11 @@ class Articles extends Component {
 
     render(){
         return(
-            this.state.userArticles.map(article => {
-                <a href="#" className="user-article">
-                    <div>{article.title}</div>
-                </a>
-            })
+            <div className="user-article">
+                {this.state.userArticles.map(article => {
+                    <a href="#">{article.title}</a>
+                })}
+            </div>
         )
     }
 }
