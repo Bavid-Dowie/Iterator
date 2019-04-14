@@ -12,7 +12,6 @@ const Homepage = (props) => {
                 <div className="homepage__login">
                     <form onSubmit={(e) => {
                         e.preventDefault()
-                        // props.handleLogin()
                         props.handleLoginSubmit()
                     }}>
                         <div className="login-field">

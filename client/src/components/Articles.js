@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const url = 'https://iterator.herokuapp.com/articles/:userId'
 
 class Articles extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             userArticles: []
@@ -20,18 +20,18 @@ class Articles extends Component {
         })
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getUserArticles()
     }
 
-    renderUserArticles(){
+    renderUserArticles() {
         const userArticles = this.state.userArticles
         return userArticles.map(article => {
             return (<a href="https://medium.com/"><div>{article.title}</div></a>)
         })
     }
 
-    render(){
+    render() {
         return(
             <div className="user-article">
                 {this.renderUserArticles()}
