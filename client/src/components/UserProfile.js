@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './Header'
 import UpdateUser from './UpdateUser'
 import CreateArticle from './CreateArticle'
+import Articles from './Articles'
 
 class UserProfile extends Component {
   render() {
@@ -25,6 +26,7 @@ class UserProfile extends Component {
         </div>
         <UpdateUser id={this.props.match.params.username}/>
         <CreateArticle/>
+        <Articles/>
       </div>
     )
   }
