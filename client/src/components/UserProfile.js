@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import UpdateUser from './UpdateUser'
 import CreateArticle from './CreateArticle'
-import Articles from './Articles'
+import UserArticles from './UserArticles'
 
 class UserProfile extends Component {
   render() {
@@ -23,7 +23,7 @@ class UserProfile extends Component {
         </div>
         <UpdateUser id={this.props.match.params.username} />
         <CreateArticle />
-        <Articles />
+        <UserArticles userObject={this.props.userObject}/>
       </div>
     )
   }
