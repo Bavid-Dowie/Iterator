@@ -60,3 +60,46 @@
 .footer__li {
     margin: 15px;
 }
+
+.homepage {
+    font-size: 20px;
+}
+
+.homepage__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 80px 20px 80px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid black;
+}
+
+.homepage__logo {
+    float: left;
+    font-size: 50px;
+}
+
+.homepage__login {
+    float: right;
+    line-height: 30px;
+}
+
+.homepage__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 80px 20px 80px;
+    padding-top: 40px;
+
+}
+
+.homepage__description {
+    float: left;
+    text-align: center;
+    font-size: 30px;
+}
+
+.homepage__signup-form {
+    float: right;
+    line-height: 30px;
+}
