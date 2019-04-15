@@ -1,7 +1,7 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import CreateUser from './CreateUser'
- 
+
 const Homepage = (props) => {
     if (props.redirect === true) {
         return <Redirect to={`/users/${props.currentUser}`} />   
@@ -60,7 +60,7 @@ const Homepage = (props) => {
                     </form>
                 </div>
             </div>
-            <CreateUser/>
+            <Link to="/create-profile"><button>Register</button></Link>
         </div>
     )
 }

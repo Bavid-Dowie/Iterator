@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CreateArticle from './CreateArticle'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Logo from '../logo-dark.png'
 
 const url = `https://iterator.herokuapp.com/userarticles/`
@@ -52,6 +52,8 @@ class UserProfile extends Component {
   }
 
   render() {
+    if(this.state.userObject === ""){
+      return <Redirect to="/" />}
     return (
       <div>
 
@@ -73,12 +75,12 @@ class UserProfile extends Component {
 
         <CreateArticle userObject={this.state.userObject} />
         </div>
-
         </div>
 
         <div className="userprofile__articlescontainer">
           {this.renderUserArticles()}
         </div>
+        <button onClick={() => this.setState({userObject: ""})}>Logout</button>
       </div>
     )
   }
