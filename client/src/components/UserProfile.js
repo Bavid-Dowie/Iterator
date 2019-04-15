@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import UpdateUser from './UpdateUser'
 import CreateArticle from './CreateArticle'
 import { Link } from 'react-router-dom'
 import Logo from '../logo-dark.png'
@@ -71,7 +70,6 @@ class UserProfile extends Component {
         </div>
 
         <div className="userprofile__createarticle">
-        <UpdateUser id={this.props.match.params.username} />
 
         <CreateArticle userObject={this.state.userObject} />
         </div>
