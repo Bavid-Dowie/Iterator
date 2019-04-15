@@ -36,6 +36,7 @@ class CreateArticle extends Component {
                 'Content-Type': 'application/json'
             }
         })
+        window.location.reload()
     }
 
     render() {
@@ -76,7 +77,7 @@ class CreateArticle extends Component {
                     <button input="field" type="submit">Create New Article</button>
                 </form>
             </div>
-        )
+        ) 
     }
 }
 
