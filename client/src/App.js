@@ -19,16 +19,14 @@ class App extends Component {
       currentUser: "",
       userObject: "",
       redirect: false,
-      loggedin: false,
-      loggedout: false
+      loggedin: false
     }
     this.loginChange = this.loginChange.bind(this)
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.getAllArticles = this.getAllArticles.bind(this)
     this.onArticleDelete = this.onArticleDelete.bind(this)
     this.renderAllArticles = this.renderAllArticles.bind(this)
-    this.logIn = this.logIn.bind(this)
-    this.logOut = this.logOut.bind(this)
+    this.logInOut = this.logInOut.bind(this)
   }
 
   loginChange(username) {
@@ -39,7 +37,7 @@ class App extends Component {
     fetch(`https://iterator.herokuapp.com/users/${this.state.currentUser}`)
       .then(res => res.json())
       .then(json => localStorage.setItem('userInfo', JSON.stringify(json[0])))
-      .then(this.logIn())
+      .then(this.logInOut())
   }
 
   getAllArticles() {
@@ -76,12 +74,8 @@ class App extends Component {
     })
   }
 
-  logIn () {
+  logInOut () {
     this.setState({loggedin: !this.state.loggedin})
-  }
-
-  logOut() {
-    this.setState({loggedout: !this.state.loggedout, loggedin: !this.state.loggedin})
   }
 
   render() {
@@ -99,7 +93,7 @@ class App extends Component {
                 loginChange={this.loginChange}
                 handleLogin={this.handleLogin}
                 handleRegister={this.handleRegister}
-                logIn={this.logIn}
+                logIn={this.logInOut}
                 loggedin={this.state.loggedin}
               />}
           />
@@ -110,7 +104,7 @@ class App extends Component {
                 {...props}
                 userObject={this.state.userObject}
                 users={this.state.users}
-                logOut={this.logOut}
+                logInOut={this.logInOut}
                 loggedin={this.state.loggedin}
               />}
           />
@@ -143,7 +137,7 @@ class App extends Component {
             <CreateUser 
               {...props}
               loggedin={this.state.loggedin}
-              logIn={this.logIn}
+              logIn={this.logInOut}
             />
             }
           />
