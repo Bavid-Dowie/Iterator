@@ -52,6 +52,7 @@ class CreateArticle extends Component {
                             name="title"
                             placeholder="enter title"
                             value={this.state.title}
+                            required
                         />
                     </div>
                     <div className="field">
@@ -62,6 +63,7 @@ class CreateArticle extends Component {
                             name="author"
                             placeholder="enter name"
                             value={this.state.author}
+                            required
                         />
                     </div>
                     <div className="field">
@@ -72,6 +74,7 @@ class CreateArticle extends Component {
                             name="content"
                             placeholder="enter text here"
                             value={this.state.content}
+                            required
                         />                        
                     </div>
                     <button input="field" type="submit">Create New Article</button>

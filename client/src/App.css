@@ -8,11 +8,6 @@
     margin: 10px;
 }
 
-.userprofile__editprofile--link {
-    text-decoration: none;
-    margin: 10px;
-}
-
 .userprofile__middlediv {
     display: flex;
 }
