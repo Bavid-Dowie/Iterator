@@ -138,3 +138,27 @@
     float: right;
     line-height: 30px;
 }
+
+.allarticles__articles--div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute; 
+}
+
+.allarticles__article {
+    text-align: center;
+    width: 200px;
+    height: 150px;
+    border: 1px dashed black;
+    margin: 20px;
+}
+
+.allarticles__article--title {
+    font-size: 25px;
+}
+
+.allarticles__article--author {
+    
+}

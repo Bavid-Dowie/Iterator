@@ -66,9 +66,11 @@ class App extends Component {
     if (Array.isArray(this.state.articles) === true)
     return this.state.articles.map(article => {
       return (
-        <div>
-          <Link to={`articles/${article.id}`}><div>{article.title}</div></Link>
-          <div>{article.author}</div>
+        <div className="allarticles__article">
+          <Link to={`articles/${article.id}`}><div>
+            <p className="allarticles__article--title">{article.title}</p>
+            <p className="allarticles__article--author"> by {article.author}</p>
+            </div></Link>
         </div>
       )
     })

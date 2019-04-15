@@ -41,10 +41,12 @@ class UserProfile extends Component {
         return (
           <div className="userprofile__article" 
           key={article.id}>
-          <Link to={`/articles/${article.id}`}>
-          </Link>
-            <p className="userprofile__article--title">{article.title}</p>
-            <p className="userprofile__article--author"> by {article.author}</p>
+            <Link to={`/articles/${article.id}`}>
+            <div>
+              <p className="userprofile__article--title">{article.title}</p>
+              <p className="userprofile__article--author"> by {article.author}</p>
+            </div>
+            </Link>
           </div>
         )
     })
