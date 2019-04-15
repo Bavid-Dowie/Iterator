@@ -4,8 +4,8 @@ import { Switch, Route, Link } from 'react-router-dom'
 import Article from './components/Article'
 import Footer from './components/Footer'
 import Homepage from './components/Homepage'
+import AllArticles from './components/AllArticles'
 import UserProfile from './components/UserProfile'
-import { decode } from 'jwt-decode';
  
 const url = "https://iterator.herokuapp.com/articles/"
 
@@ -14,7 +14,7 @@ class App extends Component {
     super(props)
     this.state = {
       users: [],
-      articles: [],
+      articles: "",
       currentUser: "",
       userObject: "",
       redirect: false,
@@ -23,57 +23,11 @@ class App extends Component {
         password: ""
       }
     }
-    this.loginUser = this.loginUser.bind(this)
-    this.registerUser = this.registerUser.bind(this)
-    this.handleLogin = this.handleLogin.bind(this)
-    this.handleRegister = this.handleRegister.bind(this)
     this.loginChange = this.loginChange.bind(this)
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
-    this.getArticles = this.getArticles.bind(this)
+    this.getAllArticles = this.getAllArticles.bind(this)
     this.onArticleDelete = this.onArticleDelete.bind(this)
-  }
-
-  // login user post function
-  loginUser = (loginData) => {
-    const opts = {
-      method: 'POST',
-      body: JSON.stringify(loginData),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-    return fetch(`http://localhost:3001/auth/login`, opts)
-      .then(resp => resp.json())
-  }
-
-  handleLoginInput = (loginData) => { }
-  //register user post function
-  registerUser = (registerData) => {
-    const opts = {
-      method: 'POST',
-      body: JSON.stringify(registerData),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-    return fetch(`http://localhost:3001/auth/register`, opts)
-      .then(resp => resp.json())
-  }
-
-  //handle login function, passed into Homepage, calls loginUser
-  async handleLogin() {
-    const userData = await this.loginUser(this.state.authFormData)
-    this.setState({
-      currentUser: decode(userData.token)
-    })
-    localStorage.setItem("jwt", userData.token)
-  }
-
-  //handle register function, passed into Homepage, calls registerUser and handleLogin
-  async handleRegister(e) {
-    e.preventDefault()
-    await this.registerUser(this.state.authFormData)
-    this.handleLogin()
+    this.renderAllArticles = this.renderAllArticles.bind(this)
   }
 
   loginChange(username) {
@@ -87,9 +41,14 @@ class App extends Component {
       .then(this.setState({ redirect: true }))
   }
 
-  getArticles() {
+  getAllArticles() {
     fetch(url)
       .then(response => response.json())
+      .then(json => this.setState({articles: json}))
+  }
+
+  componentDidMount() {
+    this.getAllArticles()
   }
 
   async onArticleDelete(e) {
@@ -102,7 +61,20 @@ class App extends Component {
     this.getArticles()
   }
 
+  renderAllArticles () {
+    if (Array.isArray(this.state.articles) === true)
+    return this.state.articles.map(article => {
+      return (
+        <div>
+          <Link to={`articles/${article.id}`}><div>{article.title}</div></Link>
+          <div>{article.author}</div>
+        </div>
+      )
+    })
+  }
+
   render() {
+    console.log('hello')
     return (
       <div className="App">
         <Switch>
@@ -135,6 +107,16 @@ class App extends Component {
                 currentUser={this.state.currentUser}
                 onArticleDelete={this.onArticleDelete}
                 getArticles={this.getArticles}
+                {...props} />}
+          />
+          <Route
+            exact path='/articles/'
+            render={(props) => 
+              <AllArticles
+                currentUser={this.state.currentUser}
+                onArticleDelete={this.onArticleDelete}
+                getArticles={this.getArticles}
+                renderAllArticles={this.renderAllArticles}
                 {...props} />}
           />
         </Switch>
