@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import UpdateUser from './UpdateUser'
+import UpdateUser from './UpdateUser' 
 import CreateArticle from './CreateArticle'
 import { Link } from 'react-router-dom'
 
