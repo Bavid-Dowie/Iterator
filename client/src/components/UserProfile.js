@@ -39,7 +39,15 @@ class UserProfile extends Component {
   renderUserArticles() {
     if(this.state.userArticles.length >= 1) {
     return this.state.userArticles.map(article => {
-        return (<div className="userprofile__article" key={article.id}><Link to={`/articles/${article.id}`}>{article.title}</Link> </div>)
+        return (
+          <div className="userprofile__article" 
+          key={article.id}>
+          <Link to={`/articles/${article.id}`}>
+          </Link>
+            <p className="userprofile__article--title">{article.title}</p>
+            <p className="userprofile__article--author"> by {article.author}</p>
+          </div>
+        )
     })
     }
   }
@@ -47,18 +55,28 @@ class UserProfile extends Component {
   render() {
     return (
       <div>
+
         <div className="userprofile__topnav">
         <img src={Logo} />
         <a className="userprofile__community--link" href="#">Community</a>
         <a  className="userprofile__editprofile--link" href="#">Edit Profile</a>
         </div>
+
+        <div className="userprofile__middlediv">
+
         <div className="userprofile__userinfo">
-          <h2 className="userprofile__h2">{this.state.userObject.name}</h2>
-          <h3 className="userprofile__h3">{this.state.userObject.bio}</h3>
+          {/* <img src={this.props.match.params.photo} /> */}
+          <h2 className="userprofile__name">{this.state.userObject.name}</h2>
+          <h3 className="userprofile__bio">{this.state.userObject.bio}</h3>
         </div>
-        <h3 className="userprofile__h3">Articles</h3>
+
+        <div className="userprofile__createarticle">
         <UpdateUser id={this.props.match.params.username} />
         <CreateArticle userObject={this.state.userObject} />
+        </div>
+
+        </div>
+
         <div className="userprofile__articlescontainer">
           {this.renderUserArticles()}
         </div>
