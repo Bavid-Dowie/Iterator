@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UpdateUser from './UpdateUser'
 import CreateArticle from './CreateArticle'
 import { Link } from 'react-router-dom'
+import Logo from '../logo-dark.png'
 
 const url = `https://iterator.herokuapp.com/userarticles/`
 
@@ -38,7 +39,7 @@ class UserProfile extends Component {
   renderUserArticles() {
     if(this.state.userArticles.length >= 1) {
     return this.state.userArticles.map(article => {
-        return (<div key={article.id}><Link to={`/articles/${article.id}`}>{article.title}</Link> </div>)
+        return (<div className="userprofile__article" key={article.id}><Link to={`/articles/${article.id}`}>{article.title}</Link> </div>)
     })
     }
   }
@@ -46,6 +47,7 @@ class UserProfile extends Component {
   render() {
     return (
       <div>
+        <img src={Logo} />
         <div className="userprofile__userinfo">
           <h2 className="userprofile__h2">{this.state.userObject.name}</h2>
           <h3 className="userprofile__h3">{this.state.userObject.bio}</h3>
@@ -53,8 +55,8 @@ class UserProfile extends Component {
         <h3 className="userprofile__h3">Articles</h3>
         <UpdateUser id={this.props.match.params.username} />
         <CreateArticle userObject={this.state.userObject} />
-        <div className="user-article">
-                {this.renderUserArticles()}
+        <div className="userprofile__articlescontainer">
+          {this.renderUserArticles()}
         </div>
       </div>
     )
