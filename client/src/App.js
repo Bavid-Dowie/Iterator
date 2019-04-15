@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route, Link, Redirect } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 import Article from './components/Article'
 import Footer from './components/Footer'
 import Homepage from './components/Homepage'
@@ -19,16 +19,14 @@ class App extends Component {
       currentUser: "",
       userObject: "",
       redirect: false,
-      authFormData: {
-        username: "",
-        password: ""
-      }
+      loggedin: false
     }
     this.loginChange = this.loginChange.bind(this)
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.getAllArticles = this.getAllArticles.bind(this)
     this.onArticleDelete = this.onArticleDelete.bind(this)
     this.renderAllArticles = this.renderAllArticles.bind(this)
+    this.logInOut = this.logInOut.bind(this)
   }
 
   loginChange(username) {
@@ -39,7 +37,7 @@ class App extends Component {
     fetch(`https://iterator.herokuapp.com/users/${this.state.currentUser}`)
       .then(res => res.json())
       .then(json => localStorage.setItem('userInfo', JSON.stringify(json[0])))
-      .then(this.setState({ redirect: true }))
+      .then(this.logInOut())
   }
 
   getAllArticles() {
@@ -76,6 +74,10 @@ class App extends Component {
     })
   }
 
+  logInOut () {
+    this.setState({loggedin: !this.state.loggedin})
+  }
+
   render() {
     return (
       <div className="App">
@@ -91,6 +93,8 @@ class App extends Component {
                 loginChange={this.loginChange}
                 handleLogin={this.handleLogin}
                 handleRegister={this.handleRegister}
+                logInOut={this.logInOut}
+                loggedin={this.state.loggedin}
               />}
           />
           <Route
@@ -100,6 +104,8 @@ class App extends Component {
                 {...props}
                 userObject={this.state.userObject}
                 users={this.state.users}
+                logInOut={this.logInOut}
+                loggedin={this.state.loggedin}
               />}
           />
           <Route
@@ -126,6 +132,8 @@ class App extends Component {
             render={(props) => 
             <CreateUser 
               {...props}
+              loggedin={this.state.loggedin}
+              logInOut={this.logInOut}
             />
             }
           />

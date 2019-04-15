@@ -1,9 +1,8 @@
 import React from 'react';
 import {Redirect, Link} from 'react-router-dom'
-import CreateUser from './CreateUser'
 
 const Homepage = (props) => {
-    if (props.redirect === true) {
+    if (props.loggedin === true) {
         return <Redirect to={`/users/${props.currentUser}`} />   
        }
     return (
