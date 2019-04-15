@@ -1,15 +1,17 @@
 .userprofile__topnav {
     display: flex;
+    justify-content: space-between;
     margin: 20px;
+    color: #142328
 }
 
 .userprofile__community--link {
-    text-decoration: none;
     margin: 10px;
 }
 
 .userprofile__middlediv {
     display: flex;
+    color: #142328
 }
 
 .userprofile__userinfo {
@@ -27,6 +29,12 @@
 
 .userprofile__createarticle {
     margin-right: 20%;
+    font-size: 12px;
+    color: #142328
+}
+
+.userprofile__createarticle--field {
+    line-height: 25px;
 }
 
 .userprofile__btn--create {
@@ -42,6 +50,12 @@
     left: 0; 
     right: 0; 
     bottom: 0; 
+    height: 50%;
+}
+
+a {
+    text-decoration: none;
+    color: #142328
 }
 
 .userprofile__article {
@@ -50,6 +64,7 @@
     height: 150px;
     border: 1px dashed black;
     margin: 20px;
+    color: #142328
 }
 
 .userprofile__article--title {
@@ -89,6 +104,7 @@
 
 .footer__li {
     margin: 15px;
+    color: #142328
 }
 
 .homepage {

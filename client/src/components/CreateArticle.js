@@ -41,7 +41,7 @@ class CreateArticle extends Component {
 
     render() {
         return (
-            <div className="create-article">
+            <div className="userprofile__createarticle--field">
                 <h2>Create A New Article</h2>
                 <form onSubmit={this.onArticleSubmit} id="userArticle">
                     <div className="field">
@@ -68,7 +68,7 @@ class CreateArticle extends Component {
                     </div>
                     <div className="field">
                         <label htmlFor="content">Article Body: </label>
-                        <input onChange={this.onArticleCreate}
+                        <textarea onChange={this.onArticleCreate}
                             className="input"
                             type="text"
                             name="content"
