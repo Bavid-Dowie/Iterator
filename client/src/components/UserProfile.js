@@ -47,7 +47,11 @@ class UserProfile extends Component {
   render() {
     return (
       <div>
+        <div className="userprofile__topnav">
         <img src={Logo} />
+        <a className="userprofile__community--link" href="#">Community</a>
+        <a  className="userprofile__editprofile--link" href="#">Edit Profile</a>
+        </div>
         <div className="userprofile__userinfo">
           <h2 className="userprofile__h2">{this.state.userObject.name}</h2>
           <h3 className="userprofile__h3">{this.state.userObject.bio}</h3>

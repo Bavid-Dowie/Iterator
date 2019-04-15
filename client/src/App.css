@@ -1,3 +1,18 @@
+.userprofile__topnav {
+    display: flex;
+    margin: 20px;
+}
+
+.userprofile__community--link {
+    text-decoration: none;
+    margin: 10px;
+}
+
+.userprofile__editprofile--link {
+    text-decoration: none;
+    margin: 10px;
+}
+
 .userprofile__userinfo {
     margin-left: 50px;
     margin-top: 20%;
