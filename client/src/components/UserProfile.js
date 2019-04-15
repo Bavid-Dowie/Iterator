@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import UpdateUser from './UpdateUser'
+// import UpdateUser from './UpdateUser'
 import CreateArticle from './CreateArticle'
 import { Link } from 'react-router-dom'
 
@@ -51,7 +51,7 @@ class UserProfile extends Component {
           <h3 className="userprofile__h3">{this.state.userObject.bio}</h3>
         </div>
         <h3 className="userprofile__h3">Articles</h3>
-        <UpdateUser id={this.props.match.params.username} />
+        {/* <UpdateUser id={this.props.match.params.username} /> */}
         <CreateArticle userObject={this.state.userObject} />
         <div className="user-article">
                 {this.renderUserArticles()}
