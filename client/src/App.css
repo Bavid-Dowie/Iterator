@@ -89,10 +89,12 @@ a {
 }
 
 .footer {
-    position: absolute; 
-    left: 0 ;
+    position: fixed; 
+    left: 0;
     right: 0; 
     bottom: 0;
+    padding: 20px;
+    background-color: white;
 }
 
 .footer__ul {
@@ -156,6 +158,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     position: absolute; 
+    margin-bottom: 100px;
 }
 
 .allarticles__article {
