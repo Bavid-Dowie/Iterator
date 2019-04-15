@@ -52,7 +52,7 @@ class UserProfile extends Component {
         </div>
         <h3 className="userprofile__h3">Articles</h3>
         <UpdateUser id={this.props.match.params.username} />
-        <CreateArticle />
+        <CreateArticle userObject={this.state.userObject} />
         <div className="user-article">
                 {this.renderUserArticles()}
         </div>
