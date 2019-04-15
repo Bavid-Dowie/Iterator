@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import Article from './components/Article'
 import Footer from './components/Footer'
 import Homepage from './components/Homepage'
 import AllArticles from './components/AllArticles'
 import UserProfile from './components/UserProfile'
+import CreateUser from './components/CreateUser';
  
 const url = "https://iterator.herokuapp.com/articles/"
 
@@ -74,7 +75,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('hello')
     return (
       <div className="App">
         <Switch>
@@ -118,6 +118,14 @@ class App extends Component {
                 getArticles={this.getArticles}
                 renderAllArticles={this.renderAllArticles}
                 {...props} />}
+          />
+          <Route 
+            exact path='/create-profile'
+            render={(props) => 
+            <CreateUser 
+              {...props}
+            />
+            }
           />
         </Switch>
         <Footer />

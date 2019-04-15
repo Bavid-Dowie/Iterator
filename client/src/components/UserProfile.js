@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-// import UpdateUser from './UpdateUser'
 import CreateArticle from './CreateArticle'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 const url = `https://iterator.herokuapp.com/userarticles/`
 
@@ -44,6 +43,8 @@ class UserProfile extends Component {
   }
 
   render() {
+    if(this.state.userObject === ""){
+      return <Redirect to="/" />}
     return (
       <div>
         <div className="userprofile__userinfo">
@@ -51,11 +52,11 @@ class UserProfile extends Component {
           <h3 className="userprofile__h3">{this.state.userObject.bio}</h3>
         </div>
         <h3 className="userprofile__h3">Articles</h3>
-        {/* <UpdateUser id={this.props.match.params.username} /> */}
         <CreateArticle userObject={this.state.userObject} />
         <div className="user-article">
                 {this.renderUserArticles()}
         </div>
+        <button onClick={() => this.setState({userObject: ""})}>Logout</button>
       </div>
     )
   }

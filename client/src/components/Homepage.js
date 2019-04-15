@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import CreateUser from './CreateUser'
 
 const Homepage = (props) => {
@@ -60,7 +60,7 @@ const Homepage = (props) => {
                     </form>
                 </div>
             </div>
-            <CreateUser/>
+            <Link to="/create-profile"><button>Register</button></Link>
         </div>
     )
 }
