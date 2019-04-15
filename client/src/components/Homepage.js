@@ -1,6 +1,7 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom'
-
+import CreateUser from './CreateUser'
+ 
 const Homepage = (props) => {
     if (props.redirect === true) {
         return <Redirect to={`/users/${props.currentUser}`} />   
@@ -56,10 +57,10 @@ const Homepage = (props) => {
                             <label htmlFor="password">Password </label>
                             <input className="input" type="password" name="password" placeholder="create password" value={props.newPassword}></input>
                         </div>
-                        <button type="submit" className="button">Create Account</button>
                     </form>
                 </div>
             </div>
+            <CreateUser/>
         </div>
     )
 }
