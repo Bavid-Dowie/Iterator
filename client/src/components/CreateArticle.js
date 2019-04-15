@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const url = `https://iterator.herokuapp.com/articles` 
+const url = `https://iterator.herokuapp.com/articles`
 
 class CreateArticle extends Component {
     constructor(props) {
