@@ -59,7 +59,7 @@ const Homepage = (props) => {
                     </form>
                 </div>
             </div>
-            <Link to="/create-profile"><button>Register</button></Link>
+            <Link to="/create-profile"><button onClick={props.logInOut}>Register</button></Link>
         </div>
     )
 }

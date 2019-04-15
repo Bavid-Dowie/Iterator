@@ -25,6 +25,7 @@ class UserProfile extends Component {
       }
       await this.setState({userObject: storage})
       this.getUserArticles()
+      this.props.logInOut()
   }
 
   getUserArticles() {
@@ -54,11 +55,8 @@ class UserProfile extends Component {
   }
 
   render() {
-    if(this.props.loggedin === false){
-      return <Redirect to="/" />}
     return (
       <div>
-        <button onClick={this.props.logInOut}>Logout</button>
         <div className="userprofile__topnav">
         <img src={Logo} />
         <Link to={`/articles`}className="userprofile__community--link" href="#">Community</Link> 
@@ -71,17 +69,18 @@ class UserProfile extends Component {
           <h2 className="userprofile__name">{this.state.userObject.name}</h2>
           <h3 className="userprofile__bio">{this.state.userObject.bio}</h3>
         </div>
-
         <div className="userprofile__createarticle">
 
         <CreateArticle userObject={this.state.userObject} />
         </div>
         </div>
 
-        <div className="userprofile__articlescontainer">
-          {this.renderUserArticles()}
+        <div
+        className="userprofile__articlescontainer">
+          {/* {this.renderUserArticles()} */}
         </div>
-      </div>
+      <div><Link to="/home"><button>Logut</button></Link></div>
+    </div>
     )
   }
 }

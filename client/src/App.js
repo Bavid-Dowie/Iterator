@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import Article from './components/Article'
 import Footer from './components/Footer'
 import Homepage from './components/Homepage'
@@ -93,7 +93,7 @@ class App extends Component {
                 loginChange={this.loginChange}
                 handleLogin={this.handleLogin}
                 handleRegister={this.handleRegister}
-                logInOut={this.logInOut}
+                logIn={this.logInOut}
                 loggedin={this.state.loggedin}
               />}
           />
@@ -107,6 +107,10 @@ class App extends Component {
                 logInOut={this.logInOut}
                 loggedin={this.state.loggedin}
               />}
+          />
+          <Route 
+            exact path='/home'
+            render={() => <Redirect to="/" />}
           />
           <Route
             exact path='/articles/:id'
@@ -133,7 +137,7 @@ class App extends Component {
             <CreateUser 
               {...props}
               loggedin={this.state.loggedin}
-              logInOut={this.logInOut}
+              logIn={this.logInOut}
             />
             }
           />
