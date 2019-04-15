@@ -54,11 +54,11 @@ class UserProfile extends Component {
   }
 
   render() {
-    if(this.state.userObject === ""){
+    if(this.props.loggedin === false){
       return <Redirect to="/" />}
     return (
       <div>
-
+        <button onClick={this.props.logInOut}>Logout</button>
         <div className="userprofile__topnav">
         <img src={Logo} />
         <a className="userprofile__community--link" href="#">Community</a>
@@ -82,7 +82,6 @@ class UserProfile extends Component {
         <div className="userprofile__articlescontainer">
           {this.renderUserArticles()}
         </div>
-        <button onClick={() => this.setState({userObject: ""})}>Logout</button>
       </div>
     )
   }

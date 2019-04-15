@@ -45,12 +45,12 @@ class CreateUser extends Component {
                 'Content-Type': 'application/json'
             }
         })
-        this.setState({redirect: true})
+        this.props.logInOut()
     }
 
     render() {
-        if (this.state.redirect === true) 
-        {return <Redirect to={`/users/${this.state.username}`}/>}
+        if (this.props.loggedin === true) 
+            {return <Redirect to={`/users/${this.state.username}`}/>}
         return (
             <div className="create-user">
                 <h2>Register</h2>
