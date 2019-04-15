@@ -49,8 +49,8 @@ class CreateUser extends Component {
     }
 
     render() {
-        if(this.state.redirect === true){
-            return <Redirect to={`users/${this.state.username}`} />}
+        if (this.state.redirect === true) 
+        {return <Redirect to={`/users/${this.state.username}`}/>}
         return (
             <div className="create-user">
                 <h2>Register</h2>
