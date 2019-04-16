@@ -112,6 +112,10 @@ class App extends Component {
             exact path='/home'
             render={() => <Redirect to="/" />}
           />
+          <Route 
+            exact path='/users'
+            render={() => <Redirect to="/" />}
+          />
           <Route
             exact path='/articles/:id'
             render={(props) => 

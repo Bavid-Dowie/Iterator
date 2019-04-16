@@ -79,7 +79,7 @@ class UserProfile extends Component {
 
         <div
         className="userprofile__articlescontainer">
-          {/* {this.renderUserArticles()} */}
+          {this.renderUserArticles()}
         </div>
     </div>
     )
