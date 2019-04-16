@@ -38,28 +38,8 @@ const Homepage = (props) => {
                 <div className="homepage__description">
                     <p>Iterator is a place to <br/> share new ideas and solutions on <br/> today's greatest coding challenges. <br /> Sign up here to create an account!</p>
                 </div>
-                <div className="homepage__signup-form">
-                    <form onSubmit={(e) => {
-                        e.preventDefault()
-                        props.handleRegister()
-                    }}>
-                        <div className="signup-field">
-                            <p>Register</p>
-                            <label htmlFor="full name">Full name </label>
-                            <input className="input" type="text" name="name" placeholder="enter your name" value={props.name}></input>
-                        </div>
-                        <div className="signup-field">
-                            <label htmlFor="email">Email </label>
-                            <input className="input" type="text" name="email" placeholder="enter email" value={props.email}></input>
-                        </div>
-                        <div className="signup-field">
-                            <label htmlFor="password">Password </label>
-                            <input className="input" type="password" name="password" placeholder="create password" value={props.newPassword}></input>
-                        </div>
-                    </form>
-                </div>
             </div>
-            <Link to="/create-profile"><button onClick={props.logInOut}>Register</button></Link>
+            <Link to="/create-profile"><button onClick={props.logInOut}>Sign up</button></Link>
         </div>
     )
 }
