@@ -22,7 +22,7 @@ class UserProfile extends Component {
   }
 
   getUserArticles() {
-    fetch(`${url}${this.state.userObject.id}`)
+    fetch(`${url}${this.props.userObject.id}`)
     .then(response => response.json())
     .then(data => {
         this.setState({ userArticles: data })
@@ -54,15 +54,15 @@ class UserProfile extends Component {
         <img alt="Iterator logo" src={Logo} />
         <Link to={`/articles`}className="userprofile__community--link"
         >Community</Link> 
-        <Link to="/home"><button>Logout</button></Link>
+        <button onClick = {this.props.logOut}>Logout</button>
         </div>
 
         <div className="userprofile__middlediv">
 
         <div className="userprofile__userinfo">
-          <img className="userprofile__userphoto" alt="user" src={this.state.userObject.photo} />
-          <h2 className="userprofile__name">{this.state.userObject.name}</h2>
-          <h3 className="userprofile__bio">{this.state.userObject.bio}</h3>
+          <img className="userprofile__userphoto" alt="user" src={this.props.userObject.photo} />
+          <h2 className="userprofile__name">{this.props.userObject.name}</h2>
+          <h3 className="userprofile__bio">{this.props.userObject.bio}</h3>
         </div>
         <div className="userprofile__createarticle">
 
