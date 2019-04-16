@@ -12,6 +12,7 @@ const bizarro = await User.create({
     name: 'Bizarro Galvao',
     email: 'bizarrogalvao@aol.com',
     username: 'galvbiz',
+    password: '123',
     bio: 'WDI instructor.',
     photo: 'https://pbs.twimg.com/profile_images/1016420986755997706/YOGIGdIm_400x400.jpg'
 })
@@ -20,6 +21,7 @@ const maddy = await User.create({
     name: 'Maddy Rombes',
     email: 'madelinerombes@gmail.com',
     username: 'maddyrombes',
+    password: '123',
     bio: 'Web Development Immersive student at General Assembly.',
     photo: 'https://miro.medium.com/max/2400/0*ndGW1W4oojUgz2H0.jpg'
 })
@@ -28,6 +30,7 @@ const jeremy = await User.create({
     name: 'Jeremy Zimmerman',
     email: 'jtzimmerm@gmail.com',
     username: 'jzimmerm',
+    password: '123',
     bio: 'Web Development student at General Assemply & NYC based musician',
     photo: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/34441735_10100275668090830_9046594004744929280_n.jpg?_nc_cat=107&_nc_ht=scontent-lga3-1.xx&oh=9a31f70a34b171cb05764fc20c40097d&oe=5D2F0C96'
 })
@@ -36,6 +39,7 @@ const sean = await User.create({
     name: 'Sean Mercer',
     email: 'seansmercer@gmail.com',
     username: 'seanmercer',
+    password: '123',
     bio: `I made this for public television, but they told me it was stupid and grossly inaccurate.`,
     photo:`https://media1.tenor.com/images/4c5b19203e99df3513b2b39798f05661/tenor.gif?itemid=4572677`
 })
@@ -44,6 +48,7 @@ const liz = await User.create({
     name: 'Liz Moy',
     email: 'elizabethtmoy@gmail.com',
     username: 'lizmoy',
+    password: '123',
     bio: 'Web Development Immersive student at General Assembly & Visual Designer',
     photo: 'https://i.pinimg.com/236x/0c/f4/b5/0cf4b50e48979cd2d8b2757da239e74b--shin-chan-crayon.jpg?b=t'
 })
