@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../images/logo-dark.png'
 import { withRouter } from 'react-router-dom';
+import Footer from '../components/Footer'
 
 const AllArticles = (props) => {
     return (
@@ -12,6 +13,7 @@ const AllArticles = (props) => {
             <div key={Math.random()}className="allarticles__articles--div">
                 {props.renderAllArticles()}
             </div>
+            <Footer />
         </div>
     )
 }

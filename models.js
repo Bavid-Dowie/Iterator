@@ -21,6 +21,9 @@ const User = db.define('user', {
     },
     photo: {
         type: Sequelize.TEXT
+    },
+    password_digest: {
+        type: Sequelize.STRING
     }
 });
 
