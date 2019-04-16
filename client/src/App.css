@@ -95,7 +95,7 @@ a {
 }
 
 .footer {
-    height: 70px;
+    position: fixed; 
     left: 0;
     right: 0; 
     bottom: 0;
@@ -107,6 +107,7 @@ a {
     text-align: center;
     display: flex;
     justify-content: center;
+    margin:0;
 }
 
 .footer__li {
@@ -193,6 +194,13 @@ a {
     width: 70px;
     color: white;
     margin: 40px auto 0px 20px;
+    opacity: 0.95;
+    transition: 0.3s;
+}
+
+.homepage_signup-button:hover {
+    opacity: 1;
+    border: 1px solid lightgrey;
 }
 
 .homepage__description-text {
