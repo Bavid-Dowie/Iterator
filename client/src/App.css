@@ -24,8 +24,20 @@ body {
     height: 60px;
 }
 
+.userprofile__nav--right {
+    margin: 20px;
+}
+
 .userprofile__community--link {
     margin: 10px;
+    text-decoration: underline;
+}
+
+.userprofile__logout--btn {
+    border-radius: 4px;
+    border: none;
+    margin-left: 20px;
+    margin-right: 15px;
 }
 
 .userprofile__middlediv {
@@ -41,18 +53,22 @@ body {
 
 .userprofile__name {
     font-size: 35px;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 .userprofile__bio {
     font-size: 20px;
-    margin-left: 15px;
+    margin-left: 30px;
 }
 
 .userprofile__userphoto {
     border-radius: 50%;
     width: 170px;
     height: 170px;
+}
+
+.hide {
+    display: none;
 }
 
 .userprofile__middle--left {
@@ -69,8 +85,13 @@ body {
     line-height: 25px;
 }
 
-.userprofile__btn--create {
-    margin-left: 50px;
+.userprofile__createarticle--form {
+    border-radius: 15px;
+}
+
+.userprofile__createarticle--button {
+    border-radius: 4px;
+    border: none;
 }
 
 .userprofile__articlescontainer {
