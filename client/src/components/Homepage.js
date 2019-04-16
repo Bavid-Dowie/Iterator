@@ -6,6 +6,7 @@ import image from '../images/homepage-image.png'
 import laptopIcon from '../images/laptop_icon.png'
 import codeIcon from '../images/code_icon.png'
 import shareIcon from '../images/share_icon.png'
+import typingPhoto from '../images/typing_stock.png'
 
 const Homepage = (props) => {
     if (props.loggedin === true) {
@@ -58,7 +59,7 @@ const Homepage = (props) => {
                         </div>
                         <div className="homepage__icon">
                             <img src={codeIcon} alt="" className="code"/>
-                            <p className="icon-text">Write<br/>articles<br/>and share<br/>code</p>   
+                            <p className="icon-text">Write<br/>articles<br/>{`&`} share<br/>code</p>
                         </div>
                         <div className="homepage__icon">
                             <img src={shareIcon} alt="" className="share"/>
@@ -66,6 +67,9 @@ const Homepage = (props) => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="homepage__banner">
+                <img src={typingPhoto} alt="" className="homepage__banner-photo"/>
             </div>
         </div>
     )
