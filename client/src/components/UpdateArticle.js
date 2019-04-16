@@ -82,8 +82,9 @@ class UpdateArticle extends Component {
                             type="text"
                             name="content"
                             placeholder="update text here"
-                            value={this.state.content}
-                        />
+                            value={this.state.content}>
+                            hello
+                            </textarea>
                     </div>
                     <button type="submit" className="button">Submit</button>
                 </form>
