@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import Article from './components/Article'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 import Homepage from './components/Homepage'
 import AllArticles from './components/AllArticles'
 import UserProfile from './components/UserProfile'
@@ -147,7 +147,7 @@ class App extends Component {
             }
           />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }
