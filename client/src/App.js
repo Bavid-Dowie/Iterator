@@ -73,7 +73,7 @@ class App extends Component {
       )
     })
   }
-
+ 
   logInOut () {
     this.setState({loggedin: !this.state.loggedin})
   }
