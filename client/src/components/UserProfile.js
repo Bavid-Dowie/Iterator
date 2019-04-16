@@ -54,7 +54,7 @@ class UserProfile extends Component {
     return (
       <div className="userprofile__body">
         <div className="userprofile__topnav">
-        <img alt="Iterator logo" src={Logo} />
+        <img className="logo" alt="Iterator logo" src={Logo} />
         <Link to={`/articles`}className="userprofile__community--link"
         >Community</Link> 
         <button onClick = {this.props.logOut}>Logout</button>
