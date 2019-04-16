@@ -15,20 +15,18 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      users: [],
       articles: "",
-      currentUser: "",
       userObject: null,
-      redirect: false,
-      loggedin: false
+      username: "",
+      password: ""
     }
     this.loginChange = this.loginChange.bind(this)
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.getAllArticles = this.getAllArticles.bind(this)
     this.onArticleDelete = this.onArticleDelete.bind(this)
     this.renderAllArticles = this.renderAllArticles.bind(this)
-    this.logInOut = this.logInOut.bind(this)
     this.decodeToken = this.decodeToken.bind(this)
+    this.logOut = this.logOut.bind(this)
   }
 
   decodeToken(token) {
@@ -51,7 +49,6 @@ class App extends Component {
     })
     localStorage.setItem('jwt', resp.data.token)
     this.decodeToken(resp.data.token)
-    this.logInOut()
   }
 
   getAllArticles() {
@@ -93,8 +90,11 @@ class App extends Component {
     })
   }
  
-  logInOut () {
-    this.setState({loggedin: !this.state.loggedin})
+  logOut () {
+    localStorage.removeItem("jwt");
+    this.setState({
+      userObject: null
+    })
   }
 
   render() {
@@ -105,15 +105,13 @@ class App extends Component {
             exact path='/'
             render={(props) =>
               <Homepage
-                redirect={this.state.redirect}
-                currentUser={this.state.currentUser}
                 handleLoginSubmit={this.handleLoginSubmit}
                 userObject={this.state.userObject}
                 loginChange={this.loginChange}
                 handleLogin={this.handleLogin}
                 handleRegister={this.handleRegister}
-                logIn={this.logInOut}
-                loggedin={this.state.loggedin}
+                username={this.state.username}
+                password={this.state.password}
               />}
           />
           <Route
@@ -122,9 +120,7 @@ class App extends Component {
               <UserProfile
                 {...props}
                 userObject={this.state.userObject}
-                users={this.state.users}
-                logInOut={this.logInOut}
-                loggedin={this.state.loggedin}
+                logOut={this.logOut}
               />}
           />
           <Route 
@@ -139,7 +135,6 @@ class App extends Component {
             exact path='/articles/:id'
             render={(props) => 
               <Article
-                currentUser={this.state.currentUser}
                 onArticleDelete={this.onArticleDelete}
                 getArticles={this.getArticles}
                 {...props} />}
@@ -148,7 +143,6 @@ class App extends Component {
             exact path='/articles/'
             render={(props) => 
               <AllArticles
-                currentUser={this.state.currentUser}
                 onArticleDelete={this.onArticleDelete}
                 getArticles={this.getArticles}
                 renderAllArticles={this.renderAllArticles}
@@ -160,8 +154,6 @@ class App extends Component {
             render={(props) => 
             <CreateUser 
               {...props}
-              loggedin={this.state.loggedin}
-              logInOut={this.logInOut}
               decodeToken={this.decodeToken}
             />
             }

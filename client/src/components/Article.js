@@ -36,7 +36,7 @@ class Article extends Component {
         <UpdateArticle id={this.props.match.params.id} article={this.state.article} getArticle={this.getArticle}/>
         <button id={this.state.article.id} onClick={(e => {
           this.props.onArticleDelete(e)
-          this.props.history.push(`/users/${this.props.currentUser}`)
+          this.props.history.push(`/users/${this.props.userObject.username}`)
         })}>Delete Article</button>
       </div>
     )

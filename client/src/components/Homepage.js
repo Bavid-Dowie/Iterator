@@ -9,8 +9,8 @@ import shareIcon from '../images/share_icon.png'
 import typingPhoto from '../images/typing_stock.png'
 
 const Homepage = (props) => {
-    if (props.loggedin === true) {
-        return <Redirect to={`/users/${props.currentUser}`} />   
+    if (props.userObject !== null) {
+        return <Redirect to={`/users/${props.userObject.username}`} />   
        }
     return (
         <div className="homepage">
@@ -34,7 +34,7 @@ const Homepage = (props) => {
                         </div>
                         <div className="homepage__login-field">
                             <label className="homepage__login-label" htmlFor="password">password </label>
-                            <input className="login-input" type="password" name="password" placeholder="password" value={props.userPassword}
+                            <input className="login-input" type="password" name="password" placeholder="password" value={props.password}
                             onChange={props.loginChange}>
                             </input>
                         </div>
@@ -47,7 +47,7 @@ const Homepage = (props) => {
                     <div className="homepage__description-text">
                         <img src={title} alt="" className="homepage__description-title"/>
                         <p className="homepage__description-body">is a place to share new ideas<br/>and solutions on today's<br/>greatest coding challenges.</p>
-                        <Link to="/create-profile"><button className="homepage_signup-button" onClick={props.logInOut}>Sign up</button></Link>
+                        <Link to="/create-profile"><button className="homepage_signup-button" >Sign up</button></Link>
                     </div>
                     <div className="homepage__image">
                         <img src={image} alt="" className="home-image"/>
