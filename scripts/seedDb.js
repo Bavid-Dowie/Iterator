@@ -51,6 +51,14 @@ const sean = await User.create({
     photo:`https://media1.tenor.com/images/4c5b19203e99df3513b2b39798f05661/tenor.gif?itemid=4572677`
 })
 
+const liz = await User.create({
+    name: 'Liz Moy',
+    email: 'elizabethtmoy@gmail.com',
+    username: 'lizmoy',
+    bio: 'Web Development Immersive student at General Assembly & Visual Designer',
+    photo: 'https://i.pinimg.com/236x/0c/f4/b5/0cf4b50e48979cd2d8b2757da239e74b--shin-chan-crayon.jpg?b=t'
+})
+
 const codeMovies = await Article.create({
     title: 'Five Movies that Vastly Misrepresent the Life of a Coder',
     author: 'Maddy Rombes',
@@ -152,6 +160,43 @@ const cursing = await Article.create({
     author: 'Sean Mercer',
     content: `Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends. My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand? Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb. Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, 'cause I'll kill the motherfucker, know what I'm sayin'? Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.`
 })
+
+const npmPacks = await Article.create({
+    title: 'An Ode to My Favorite npm Packages',
+    author: 'Liz Moy',
+    content: "Patch backpack newsroom cafe paywall he said she said reporting discuss, analytics spring tweets dying iPad app The Daily synergize newsonomics MinnPost, crowdfunding advertising just across the wire link economy monetization totally blowing up on Twitter paidContent copyright audience atomization overcome Google+ privacy tweet pay curtain mathewi, get me rewrite writing information overload CPC Nick Denton gotta grok it before you rock it metered model The Weekender. Journal Register production of innocence Gutenberg parenthesis Project Thunderdome MinnPost Alberto Ibarguen Gardening & War section, the audience knows more than I do church of the savvy I love the Weather & Opera section mthomps Chartbeat twitterati WordPress, crowdfunding WaPo retweet paywall open source. Like button information overload perfect for starting a campfire twitterati digital circulation strategy Gannett retweet AP newsonomics WaPo, Bill Keller paidContent Paul Steiger incent 5% corruption plagiarism anonymity WordPress, Rupert Murdoch afternoon paper nonprofit community but what’s the business model tweets data journalism."
+})
+
+const wireFrames = await Article.create({
+    title: 'Wireframing Essentials for Developers',
+    author: 'Liz Moy',
+    content: "Community I saw it on Mediagazer natural-born blogger the power of the press belongs to the person who owns one CNN leaves it there newspaper strike, RT Tim Carmody West Seattle Blog stream reporting community link economy, Gannett reporting try PR filters Politics & Socks page synergize. newsonomics process vs. product the medium is the message Bill Keller Wikipedia gamification election-night hologram hot news doctrine news.me media diet WSJ TweetDeck, Steve Jobs kitchen table of the future link economy iPhone app Dayton for under $900 a day Flipboard tweets Pulse mathewi Julian Assange, SEO he said she said Buttry Mozilla morgue if the news is that important, it'll find me Paul Steiger I saw it on Mediagazer linking newspaper strike hyperlocal layoffs Kindle Single digital circulation strategy Innovator's Dilemma Clay Shirky David Cohn Django Arianna Neil Postman CTR, hyperlocal tweet net neutrality hyperlocal Gutenberg Politics & Socks page vast wasteland John Dewey Free Darko. Fuego abundance The Daily Walter Cronkite died for your sins retweet engagement view from nowhere YouTube link economy, nonprofit meme perfect for starting a campfire Instagram Rupert Murdoch Android kitchen table of the future open source SEO, NPR The Printing Press as an Agent of Change the other longer Book Review 5% corruption dying WSJ I love the Weather & Opera section."
+})
+
+const faveResources = await Article.create({
+    title: 'Wireframing Essentials for Developers',
+    author: 'Liz Moy',
+    content: "A support boots on the ground innovation ecosystem youth accessibility mobilize, entrepreneur, compelling academic silo effective LGBTQ+. B-corp social innovation shared unit of analysis deep dive natural resources scale and impact revolutionary do-gooder. Co-creation, boots on the ground revolutionary academic social return on investment policymaker unprecedented challenge resist theory of change. Mass incarceration effective, LGBTQ+; preliminary thinking inspirational leverage triple bottom line inspirational when. Ecosystem living a fully ethical life but, systems thinking collaborative consumption humanitarian bandwidth thought partnership do-gooder gender rights. Social intrapreneurship; inspirational inclusion, fairness a inclusive scale and impact social intrapreneurship. Co-create shared vocabulary; change-makers scalable the resistance living a fully ethical life compassion our work. Resilient, vibrant; sustainable movements shared unit of analysis, innovate, data natural resources low-hanging fruit energize living a fully ethical life B-corp mass incarceration. Problem-solvers inspire problem-solvers empower silo indicators, white paper. Scalable, scalable B-corp; strategize contextualize energize. Energize mobilize energize inspiring, uplift preliminary thinking B-corp LGBTQ+, to then. Compassion vibrant game-changer deep dive correlation; white paper technology challenges and opportunities shared vocabulary."
+})
+
+const jobSwitch = await Article.create({
+    title: 'How I Made the Transition into Web Development',
+    author: 'Liz Moy',
+    content: "Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify. Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear garlic gram celery bitterleaf wattle seed collard greens nori. Grape wattle seed kombu beetroot horseradish carrot squash brussels sprout chard. Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut jícama green bean celtuce collard greens avocado quandong fennel gumbo black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea tomato spring onion azuki bean gourd. Gumbo kakadu plum komatsuna black-eyed pea green bean zucchini gourd winter purslane silver beet rock melon radish asparagus spinach."
+})
+
+const myHobbies = await Article.create({
+    title: 'All About My Non-Programming Interests',
+    author: 'Liz Moy',
+    content: "Justice policymaker, social return on investment a shared vocabulary or social innovation resist big data the targeted white paper. Program areas, collaborative consumption do-gooder; engaging social entrepreneurship radical social entrepreneur silo communities gender rights citizen-centered. Policymaker deep dive; technology thought leadership, program areas or shine parse circular greenwashing. Indicators, shared unit of analysis or technology issue outcomes activate. Unprecedented challenge contextualize social entrepreneurship or; innovation green space, leverage philanthropy academic; impact effective leverage disrupt. Do-gooder natural resources overcome injustice families, best practices, radical, our work disrupt, relief our work our work capacity building activate game-changer. Relief ideate academic; benefit corporation."
+})
+
+const collab = await Article.create({
+    title: '10 Best Practices for Collaborating with UX Designers',
+    author: 'Liz Moy',
+    content: "Skate ipsum dolor sit amet, hang-up wheels drop in darkslide freestyle spine. Alley oop risers tail Tracker transfer nosegrind. 50-50 lien air late disaster launch ramp rad. Frigid air bigspin airwalk crail slide mute-air tail. Transfer front foot impossible melancholy hardware bearings hard flip. Body varial concave smith grind method air birdie Jeremy Klein frontside air. Frigid air full pipe tailslide Santa Monica Airlines downhill impossible sponsored. Dude pogo lien air full-cab full pipe 270. Kickturn varial ollie north aerial kidney coffin. Street pump Japan air Santa Cruz sick. Fast plant ho-ho Kevin Harris JFA 180. Air rad pressure flip rocket air. Nose-bump body varial hip casper. Melancholy Blind casper grab opposite footed. Upland grind stalefish ho-ho birdie. Coper birdie Christ air tailslide. Late dude tail drop in. Steps flail coping full pipe. Smith grind alley oop mini ramp chicken wing Christ air bean plant. Disaster frigid air frontside finger flip nose slide. Bank axle ollie hole tic-tac lip. Pool hang ten rocket air 540 coper. Town & Country transition ollie north full-cab mongo finger flip. Snake Wade Speyer skater slap maxwell crailtap ollie north. Rip grip cess slide yeah Jeremy Wray ollie north pivot. Backside alley oop nose grab lipslide method air. Boneless ollie north coping fakie out Kevin Jarvis launch ramp. Ollie north pogo transfer gnarly Bare Cover ledge."
+})
+
 // association
 
 await article1.setUser(test1)
@@ -172,6 +217,12 @@ await playBall.setUser(sean)
 await optimizeBiz.setUser(sean)
 await argh.setUser(sean)
 await cursing.setUser(sean)
+await npmPacks.setUser(liz)
+await wireFrames.setUser(liz)
+await faveResources.setUser(liz)
+await jobSwitch.setUser(liz)
+await myHobbies.setUser(liz)
+await collab.setUser(liz)
 
 process.exit()
 
