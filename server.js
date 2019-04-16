@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 const {User, Article} = require ('./models')
 const PORT = process.env.PORT || 3001   
 
-app.get('/', restrict, (req, res) => res.send('Sup yo'))
+app.get('/', (req, res) => res.send('Sup yo'))
 
 const buildAuthResponse = (user) => {
     const token_data = {
@@ -61,7 +61,7 @@ app.get('/users/:username', async (req, res) => {
     }
 })
 
-app.post('/users/register', restrict, async (req, res) => {
+app.post('/users/register', async (req, res) => {
     try {
         const password_digest = await hashPassword(req.body.password);
 
@@ -80,7 +80,7 @@ app.post('/users/register', restrict, async (req, res) => {
     }
 })
 
-app.post('/users/login', restrict, async (req, res) => {
+app.post('/users/login', async (req, res) => {
     try {
         const user = await User.findOne({
             where: {
