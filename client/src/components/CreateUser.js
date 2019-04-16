@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom' 
 
-const url = `https://iterator.herokuapp.com/articles`
+const url = `https://iterator.herokuapp.com/users/register`
 
 class CreateUser extends Component {
     constructor(props) {
@@ -9,6 +9,7 @@ class CreateUser extends Component {
         this.state = {
             name: "",
             email: "",
+            password: "",
             username: "",
             bio: "",
             photo: "",
@@ -32,11 +33,12 @@ class CreateUser extends Component {
             name: this.state.name,
             email: this.state.email,
             username: this.state.username,
+            password: this.state.password,
             bio: this.state.bio,
             photo: this.state.photo
         }
 
-        await localStorage.setItem('userInfo', JSON.stringify(data))  
+        localStorage.setItem('userInfo', JSON.stringify(data))
 
         await fetch(url, {
             method: 'POST',
@@ -44,6 +46,8 @@ class CreateUser extends Component {
             headers: {
                 'Content-Type': 'application/json'
             }
+        }).then(response => {
+            localStorage.setItem('jwt', response)
         })
         this.props.logInOut()
     }
@@ -83,6 +87,16 @@ class CreateUser extends Component {
                             name="username"
                             placeholder="enter username"
                             value={this.state.username}
+                        />                        
+                    </div>
+                    <div className="field">
+                        <label htmlFor="password">Password: </label>
+                        <input onChange={this.onUserCreate}
+                            className="input"
+                            type="password"
+                            name="password"
+                            placeholder="enter password"
+                            value={this.state.password}
                         />                        
                     </div>
                     <div className="field">
