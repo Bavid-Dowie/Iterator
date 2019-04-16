@@ -1,7 +1,6 @@
 const { User, Article } = require('../models')
 
 const main = async () => {
-// delete database
 await User.destroy({
     where: {}
 })
@@ -9,22 +8,12 @@ await Article.destroy({
     where: {}
 })
 
-// seed data -- users
-
-const test1 = await User.create({
+const bizarro = await User.create({
     name: 'Bizarro Galvao',
     email: 'bizarrogalvao@aol.com',
     username: 'galvbiz',
-    bio: 'This is a bio.',
+    bio: 'WDI instructor.',
     photo: 'https://pbs.twimg.com/profile_images/1016420986755997706/YOGIGdIm_400x400.jpg'
-})
-
-// articles
-
-const article1 = await Article.create({
-    title: 'Why I love Jasmine juicebox tea',
-    author: 'B. Galvao',
-    content: 'This is the content of my article.'
 })
 
 const maddy = await User.create({
@@ -57,6 +46,18 @@ const liz = await User.create({
     username: 'lizmoy',
     bio: 'Web Development Immersive student at General Assembly & Visual Designer',
     photo: 'https://i.pinimg.com/236x/0c/f4/b5/0cf4b50e48979cd2d8b2757da239e74b--shin-chan-crayon.jpg?b=t'
+})
+
+const jasmineTea = await Article.create({
+    title: 'Why I love Jasmine juicebox tea',
+    author: 'Bizarro Galvao',
+    content: 'Curabitizzle izzle fo shizzle quis nisi uhuh ... yih! mollizzle. Suspendisse bow wow wow. Pizzle odio. Ma nizzle neque. Cras orci. Cras maurizzle things, interdizzle shizzlin dizzle, check it out shizzlin dizzle amizzle, break it down izzle, pede. Shut the shizzle up rizzle. Vestibulum check it out, dizzle izzle, sagittis fo shizzle, cool sempizzle, mah nizzle. Cras in ipsizzle. Go to hizzle volutpizzle away vizzle yippiyo. Crizzle quizzle justo nizzle purus sodales ornare. Break it down venenatis doggy get down get down lacus. Nunc urna. Suspendisse funky fresh placerat funky fresh. Curabitizzle mah nizzle shizznit. Check out this pharetra, i saw beyonces tizzles and my pizzle went crizzle eu thats the shizzle hendrerizzle, ipsum pot elementizzle sizzle, doggy crazy magna felis luctizzle pede. Funky fresh a shut the shizzle up. Class aptent sure crazy izzle litora torquent dizzle conubia nizzle, pizzle inceptos hymenaeos. Aliquam go to hizzle, brizzle nizzle elementizzle nonummy, nisl orci cool leo, in semper boom shackalack arcu dawg sizzle.'
+})
+
+const coconut = await Article.create({
+    title: 'How to Crack a Coconut',
+    author: 'Bizarro Galvao',
+    content: 'Praesent mammasay mammasa mamma oo sa stuff rizzle ghetto posuere crazy. Aliquizzle lacinia viverra its fo rizzle. Rizzle ass enizzle et leo fizzle euismizzle. Hizzle stuff, crackalackin vitae brizzle gangsta, nulla ligula bibendum metizzle, black venenatizzle augue dui izzle arcu. Shizzle my nizzle crocodizzle away lacus izzle fizzle. Vivamizzle arcu magna, sheezy sizzle amizzle, faucibus sizzle, placerizzle izzle, mauris. Sizzle vehicula cool nibh. Pimpin erat diam, hendrerizzle dizzle, mofo izzle, im in the shizzle a, arcu. Morbi aliquam placerat boom shackalack. Fizzle malesuada go to hizzle izzle erat. Sure metizzle sizzle, dizzle eu, accumsan bling bling, ass egizzle, shut the shizzle up. Nulla iaculis nunc shizznit orci own yo sodalizzle. Sure sagittis, nulla things check out this mollis, lacus quam luctus erizzle, gangster vehicula dizzle purizzle vitae check it out. vehicula ma nizzle. Dawg phat mi. Bizzle eu turpis. My shizz mah nizzle magna. That\'s the shizzle turpizzle erat, consectetizzle id, tellivizzle izzle, facilisizzle in, away. Nunc sizzle. Pimpin\' nisi erizzle, tristique get down get down amet, ultricies izzle, go to hizzle nizzle, augue.'
 })
 
 const codeMovies = await Article.create({
@@ -197,9 +198,8 @@ const collab = await Article.create({
     content: "Skate ipsum dolor sit amet, hang-up wheels drop in darkslide freestyle spine. Alley oop risers tail Tracker transfer nosegrind. 50-50 lien air late disaster launch ramp rad. Frigid air bigspin airwalk crail slide mute-air tail. Transfer front foot impossible melancholy hardware bearings hard flip. Body varial concave smith grind method air birdie Jeremy Klein frontside air. Frigid air full pipe tailslide Santa Monica Airlines downhill impossible sponsored. Dude pogo lien air full-cab full pipe 270. Kickturn varial ollie north aerial kidney coffin. Street pump Japan air Santa Cruz sick. Fast plant ho-ho Kevin Harris JFA 180. Air rad pressure flip rocket air. Nose-bump body varial hip casper. Melancholy Blind casper grab opposite footed. Upland grind stalefish ho-ho birdie. Coper birdie Christ air tailslide. Late dude tail drop in. Steps flail coping full pipe. Smith grind alley oop mini ramp chicken wing Christ air bean plant. Disaster frigid air frontside finger flip nose slide. Bank axle ollie hole tic-tac lip. Pool hang ten rocket air 540 coper. Town & Country transition ollie north full-cab mongo finger flip. Snake Wade Speyer skater slap maxwell crailtap ollie north. Rip grip cess slide yeah Jeremy Wray ollie north pivot. Backside alley oop nose grab lipslide method air. Boneless ollie north coping fakie out Kevin Jarvis launch ramp. Ollie north pogo transfer gnarly Bare Cover ledge."
 })
 
-// association
-
-await article1.setUser(test1)
+await jasmineTea.setUser(bizarro)
+await coconut.setUser(bizarro)
 await codeMovies.setUser(maddy)
 await cssAni.setUser(maddy)
 await dreamJob.setUser(maddy)
