@@ -423,3 +423,38 @@ a {
     margin: 20px;
 }
 
+.article__page {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+.article__page-details {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+} 
+
+.article__page-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30pt;
+    color: #142328;
+    text-align: center;
+}
+
+.article__page-author {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 14pt;
+    color: #142328;
+    text-align: center;
+}
+
+.article__top-image {
+    height: 210px;
+    opacity: 0.90;
+}
