@@ -27,14 +27,14 @@ class Article extends Component {
   
   render() {
     return (
-      <div className="article-page">
-        <div className="article-details">
-          <h3>{this.state.article.title}</h3>
-          <p>{this.state.article.author}</p>
-          <div>{this.state.article.content}</div>
+      <div className="article__page">
+        <div className="article__page-details">
+          <div className="article__page-title">{this.state.article.title}</div>
+          <p className="article__page-author">{this.state.article.author}</p>
+          <div className="article__page-content">{this.state.article.content}</div>
         </div>
         <UpdateArticle id={this.props.match.params.id} article={this.state.article} getArticle={this.getArticle}/>
-        <button id={this.state.article.id} onClick={(e => {
+        <button id={this.state.article.id} className="delete-article-button" onClick={(e => {
           this.props.onArticleDelete(e)
           this.props.history.push(`/users/${this.props.userObject.username}`)
         })}>Delete Article</button>
