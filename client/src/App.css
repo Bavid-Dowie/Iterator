@@ -119,12 +119,13 @@ a {
     height: 60px;
     background-color: #2E3192;
     display: flex;
+    justify-content: space-between;
 }
 
 .homepage__logo {
-    height: 50px;
-    margin: 10px;
-    padding: 0px;
+    height: 40px;
+    margin: 10px 10px 0px 10px;
+    padding: 6px 0px 0px 0px;
 }
 
 .homepage__form {
@@ -132,7 +133,7 @@ a {
 }
 
 .homepage__login-field {
-    margin: 20px;
+    margin: 20px 5px 20px 5px;
 }
 
 .homepage__login-label {
@@ -150,6 +151,44 @@ a {
     border: none;
     color: white;
     font-family: 'Poppins', sans-serif;
+    margin: 10px;
+}
+
+.homepage__body {
+    height: 100%;
+    width: 100%;
+    background-color: #F3F0F0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.homepage__description-title {
+    height: 77px;
+}
+
+.homepage__description-body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11pt;
+    padding: 0px 10px 0px 15px;
+    margin: 0;
+}
+
+.homepage_signup-button {
+    background-color: #8393CA;
+    border-radius: 4px;
+    border: none;
+    height: 25px;
+    width: 70px;
+    color: white;
+    margin: 40px auto 0px 20px;
+}
+
+.homepage__description-text {
+    margin: 100px 80px 100px 120px;
+}
+
+.home-image {
+    width: 300px;
 }
 
 .allarticles__backbtn {

@@ -41,7 +41,7 @@ const Homepage = (props) => {
                     <div className="homepage__description-text">
                         <img src={title} alt="" className="homepage__description-title"/>
                         <p className="homepage__description-body">is a place to share new ideas<br/>and solutions on today's<br/>greatest coding challenges.</p>
-                        <Link to="/create-profile"><button onClick={props.logInOut}>Sign up</button></Link>
+                        <Link to="/create-profile"><button className="homepage_signup-button" onClick={props.logInOut}>Sign up</button></Link>
                     </div>
                     <div className="homepage__image">
                         <img src={image} className="home-image"/>
