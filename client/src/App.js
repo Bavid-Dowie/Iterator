@@ -155,6 +155,7 @@ class App extends Component {
             <CreateUser 
               {...props}
               decodeToken={this.decodeToken}
+              userObject={this.state.userObject}
             />
             }
           />
