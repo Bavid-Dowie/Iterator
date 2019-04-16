@@ -99,7 +99,7 @@ app.post('/users/login', restrict, async (req, res) => {
     }
 })
 
-app.post('/articles', restrict, async (req, res) => {
+app.post('/articles', async (req, res) => {
     try {
         const newArticle = await Article.create(req.body)
         res.json(newArticle)
