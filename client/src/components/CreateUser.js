@@ -46,8 +46,10 @@ class CreateUser extends Component {
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then(response => {
-            localStorage.setItem('jwt', response)
+        }).then(response => response.json())
+        .then(response => {
+            localStorage.setItem('jwt', response.token);
+            this.props.decodeToken(response.token)
         })
         this.props.logInOut()
     }

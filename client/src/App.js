@@ -6,6 +6,8 @@ import Homepage from './components/Homepage'
 import AllArticles from './components/AllArticles'
 import UserProfile from './components/UserProfile'
 import CreateUser from './components/CreateUser';
+import decode from 'jwt-decode'
+import axios from 'axios'
 
 const url = "https://iterator.herokuapp.com/articles/"
 
@@ -16,7 +18,7 @@ class App extends Component {
       users: [],
       articles: "",
       currentUser: "",
-      userObject: "",
+      userObject: null,
       redirect: false,
       loggedin: false
     }
@@ -26,28 +28,45 @@ class App extends Component {
     this.onArticleDelete = this.onArticleDelete.bind(this)
     this.renderAllArticles = this.renderAllArticles.bind(this)
     this.logInOut = this.logInOut.bind(this)
+    this.decodeToken = this.decodeToken.bind(this)
   }
 
-  loginChange(username) {
-    this.setState({ currentUser: username.target.value })
+  decodeToken(token) {
+    const userData = decode(token)
+    this.setState({
+      userObject: userData
+    })
   }
- 
-  handleLoginSubmit() {
-    fetch(`https://iterator.herokuapp.com/users/${this.state.currentUser}`)
-      .then(res => res.json())
-      .then(json => localStorage.setItem('userInfo', JSON.stringify(json[0])))
-      .then(this.logInOut())
+
+  loginChange(e) {
+    const {name, value} = e.target
+    this.setState({ [name]: value })
+  }
+
+  async handleLoginSubmit() {
+
+    const resp = await axios.post(`https://iterator.herokuapp.com/users/login`, {
+      username: this.state.username,
+      password: this.state.password
+    })
+    localStorage.setItem('jwt', resp.data.token)
+    this.decodeToken(resp.data.token)
+    this.logInOut()
   }
 
   getAllArticles() {
     fetch(url)
-      .then(response => console.log(response))
-      // .then(response => response.json())
-      // .then(json => this.setState({articles: json}))
+      .then(response => response.json())
+      .then(json => this.setState({articles: json}))
   }
 
   componentDidMount() {
     this.getAllArticles()
+    const token = localStorage.getItem('jwt')
+    if (token) {
+      const decodedToken = decode(token)
+      this.setState({ userObject: decodedToken })
+    }
   }
 
   async onArticleDelete(e) {
@@ -142,7 +161,8 @@ class App extends Component {
             <CreateUser 
               {...props}
               loggedin={this.state.loggedin}
-              logIn={this.logInOut}
+              logInOut={this.logInOut}
+              decodeToken={this.decodeToken}
             />
             }
           />
