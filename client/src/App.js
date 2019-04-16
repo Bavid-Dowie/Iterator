@@ -31,7 +31,7 @@ class App extends Component {
   loginChange(username) {
     this.setState({ currentUser: username.target.value })
   }
-
+ 
   handleLoginSubmit() {
     fetch(`https://iterator.herokuapp.com/users/${this.state.currentUser}`)
       .then(res => res.json())
@@ -73,7 +73,7 @@ class App extends Component {
       )
     })
   }
-
+ 
   logInOut () {
     this.setState({loggedin: !this.state.loggedin})
   }
