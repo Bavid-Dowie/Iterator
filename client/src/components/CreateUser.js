@@ -12,9 +12,7 @@ class CreateUser extends Component {
             password: "",
             username: "",
             bio: "",
-            photo: "",
-            redirect: false
-        }
+            photo: ""        }
 
         this.onUserCreate = this.onUserCreate.bind(this)
         this.onUserSubmit = this.onUserSubmit.bind(this)
