@@ -22,7 +22,7 @@ class UserProfile extends Component {
   }
 
   getUserArticles() {
-    fetch(`${url}${this.props.userObject.id}`)
+    fetch(`${url}${this.state.userObject.id}`)
     .then(response => response.json())
     .then(data => {
         this.setState({ userArticles: data })
@@ -60,9 +60,9 @@ class UserProfile extends Component {
         <div className="userprofile__middlediv">
 
         <div className="userprofile__userinfo">
-          <img className="userprofile__userphoto" alt="user" src={this.props.userObject.photo} />
-          <h2 className="userprofile__name">{this.props.userObject.name}</h2>
-          <h3 className="userprofile__bio">{this.props.userObject.bio}</h3>
+          <img className="userprofile__userphoto" alt="user" src={this.state.userObject.photo} />
+          <h2 className="userprofile__name">{this.state.userObject.name}</h2>
+          <h3 className="userprofile__bio">{this.state.userObject.bio}</h3>
         </div>
         <div className="userprofile__createarticle">
 
