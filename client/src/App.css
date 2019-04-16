@@ -164,8 +164,12 @@ a {
     text-align: center;
     width: 200px;
     height: 150px;
-    border: 1px dashed black;
     margin: 20px;
+    background-color: rgba(223, 255, 206,0.8)
+}
+
+.allarticles__article:hover {
+    background-color: rgba(223, 255, 206,0.4)
 }
 
 .allarticles__article--title {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CreateArticle from './CreateArticle'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Logo from '../logo-dark.png'
 
 const url = `https://iterator.herokuapp.com/userarticles/`
@@ -58,14 +58,14 @@ class UserProfile extends Component {
     return (
       <div>
         <div className="userprofile__topnav">
-        <img src={Logo} />
+        <img alt="Iterator logo" src={Logo} />
         <Link to={`/articles`}className="userprofile__community--link" href="#">Community</Link> 
         </div>
 
         <div className="userprofile__middlediv">
 
         <div className="userprofile__userinfo">
-          {/* <img src={this.props.match.params.photo} /> */}
+          {/* <img alt="user photo" src={this.props.match.params.photo} /> */}
           <h2 className="userprofile__name">{this.state.userObject.name}</h2>
           <h3 className="userprofile__bio">{this.state.userObject.bio}</h3>
         </div>
