@@ -1,17 +1,30 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const { genToken, hashPassword, checkPassword, restrict } = require('./services/auth')
 
 const app = express()
 app.use(cors())
 app.use("/", express.static("./build/"));
 app.use(bodyParser.json())
 
-//import models
 const {User, Article} = require ('./models')
 const PORT = process.env.PORT || 3001   
 
-app.get('/', (req, res) => res.send('Sup yo'))
+app.get('/', restrict, (req, res) => res.send('Sup yo'))
+
+const buildAuthResponse = (user) => {
+    const token_data = {
+      id: user.id,
+      username: user.username,
+      name: user.name,
+      email: user.email,
+      bio: user.bio,
+      photo: user.photo
+    };
+    const token = genToken(token_data);
+    return { token }
+}
 
 app.get('/users', async (req, res) => {
     try {
@@ -48,16 +61,45 @@ app.get('/users/:username', async (req, res) => {
     }
 })
 
-app.post('/users', async (req, res) => {
+app.post('/users/register', restrict, async (req, res) => {
     try {
-        const newUser = await User.create(req.body)
-        res.json(newUser)
+        const password_digest = await hashPassword(req.body.password);
+
+        const newUser = await User.create({
+            username: req.body.username,
+            name: req.body.name,
+            email: req.body.email,
+            bio: req.body.bio,
+            photo: req.body.photo,
+            password_digest
+        })
+        const respData = buildAuthResponse(newUser);
+        res.json(respData)
     } catch (error) {
         res.status(500).json({message: error.message})
     }
 })
 
-app.post('/articles', async (req, res) => {
+app.post('/users/login', restrict, async (req, res) => {
+    try {
+        const user = await User.findOne({
+            where: {
+                username: req.body.username
+            }
+        })
+
+        if (await checkPassword(req.body.password, user.password_digest)) {
+            const respData = buildAuthResponse(user)
+            res.json(respData)
+        } else {
+            res.status(401).send('Invalid Credentials')
+        }
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+})
+
+app.post('/articles', restrict, async (req, res) => {
     try {
         const newArticle = await Article.create(req.body)
         res.json(newArticle)
@@ -86,7 +128,7 @@ app.get('/userarticles/:userId', async (req, res) => {
     }
 })
 
-app.put('/users/:id', async (req, res) => {
+app.put('/users/:id', restrict, async (req, res) => {
     try {
         const userId = req.params.id
         const updatedUser = {
@@ -103,7 +145,7 @@ app.put('/users/:id', async (req, res) => {
     }
 })
 
-app.put('/articles/:id', async (req, res) => {
+app.put('/articles/:id', restrict, async (req, res) => {
     try {
         const articleId = parseInt(req.params.id)
         const updateArticle = {
@@ -120,7 +162,7 @@ app.put('/articles/:id', async (req, res) => {
 })
 
 
-app.delete('/users/:id', async (req, res) => {
+app.delete('/users/:id', restrict, async (req, res) => {
     try {
       const id = req.params.id;
       const user = await User.destroy({ where: {id: id} });
@@ -131,7 +173,7 @@ app.delete('/users/:id', async (req, res) => {
     }
   });
 
-  app.delete('/articles/:id', async (req, res) => {
+  app.delete('/articles/:id', restrict, async (req, res) => {
     try {
       const id = req.params.id;  
       const article = await Article.destroy({ where: {id: id} });
@@ -141,7 +183,5 @@ app.delete('/users/:id', async (req, res) => {
       res.status(500).json({ message: error.message});
     }
   });
-
-
 
 app.listen(PORT, () => console.log(`Iterator listening on port ${PORT}`))
