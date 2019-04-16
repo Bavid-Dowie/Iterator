@@ -128,7 +128,7 @@ app.get('/userarticles/:userId', async (req, res) => {
     }
 })
 
-app.put('/users/:id', restrict, async (req, res) => {
+app.put('/users/:id', async (req, res) => {
     try {
         const userId = req.params.id
         const updatedUser = {
@@ -145,7 +145,7 @@ app.put('/users/:id', restrict, async (req, res) => {
     }
 })
 
-app.put('/articles/:id', restrict, async (req, res) => {
+app.put('/articles/:id', async (req, res) => {
     try {
         const articleId = parseInt(req.params.id)
         const updateArticle = {
@@ -162,7 +162,7 @@ app.put('/articles/:id', restrict, async (req, res) => {
 })
 
 
-app.delete('/users/:id', restrict, async (req, res) => {
+app.delete('/users/:id', async (req, res) => {
     try {
       const id = req.params.id;
       const user = await User.destroy({ where: {id: id} });
@@ -173,7 +173,7 @@ app.delete('/users/:id', restrict, async (req, res) => {
     }
   });
 
-  app.delete('/articles/:id', restrict, async (req, res) => {
+  app.delete('/articles/:id', async (req, res) => {
     try {
       const id = req.params.id;  
       const article = await Article.destroy({ where: {id: id} });
