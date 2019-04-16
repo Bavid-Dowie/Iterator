@@ -13,6 +13,7 @@ class Article extends Component {
   }
 
   getArticle() {
+    console.log('This works')
     fetch(`${url}${this.props.match.params.id}`)
       .then(response => response.json())
       .then(data => {
