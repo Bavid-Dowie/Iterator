@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="footer">
             <ul className="footer__ul">
             <li className="footer__li">© M3J 2019</li>
-            <li className="footer__li">view it on <a href="https://github.com/Bavid-Dowie/Iterator" target="blank">Github</a></li>
+            <li className="footer__li"><a className="footer__link" href="https://github.com/Bavid-Dowie/Iterator" target="blank">view it on Github</a></li>
             </ul>
         </div>
     )

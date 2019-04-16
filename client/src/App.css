@@ -12,6 +12,8 @@ body {
     background-color: #F3F0F0;
     height: 100%;
     width: 100%;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .userprofile__topnav {
@@ -82,7 +84,7 @@ a {
 }
 
 .userprofile__article {
-    text-align: center;
+    text-align: left;
     width: 200px;
     height: 150px;
     margin: 20px;
@@ -96,11 +98,13 @@ a {
 }
 
 .userprofile__article--title {
-    font-size: 25px;
+    font-size: 20px;
+    margin-left: 5px;
 }
 
 .userprofile__article--author {
-    font-size: 15px;
+    font-size: 12px;
+    margin-left: 5px;
 }
 
 .article {
@@ -122,6 +126,10 @@ a {
     right: 0; 
     bottom: 0;
     background-color: #132026;
+}
+
+.footer__link {
+    color: white;
 }
 
 .footer__ul {
