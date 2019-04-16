@@ -46,13 +46,18 @@ class App extends Component {
   }
 
   async handleLoginSubmit() {
-
-    const resp = await axios.post(`https://iterator.herokuapp.com/users/login`, {
-      username: this.state.username,
-      password: this.state.password
-    })
-    localStorage.setItem('jwt', resp.data.token)
-    this.decodeToken(resp.data.token)
+    try {
+      const resp = await axios.post(`https://iterator.herokuapp.com/users/login`, {
+        username: this.state.username,
+        password: this.state.password
+      })
+      localStorage.setItem('jwt', resp.data.token)
+      this.decodeToken(resp.data.token) 
+    } catch (error) {
+      console.log(error)
+      alert("Invalid credentials try again")
+      this.setState({username: "", password: ""})
+    }
   }
 
   getAllArticles() {
