@@ -63,9 +63,19 @@ class UserProfile extends Component {
         <div className="userprofile__middlediv">
 
         <div className="userprofile__userinfo">
-          <img className="userprofile__userphoto" alt="user" src={this.props.userObject.photo} />
-          <h2 className="userprofile__name">{this.props.userObject.name}</h2>
-          <h3 className="userprofile__bio">{this.props.userObject.bio}</h3>
+
+          <div className="userprofile__middle--left">
+
+            <img className="userprofile__userphoto" alt="user" src={this.props.userObject.photo} />
+
+            <div>
+
+            <h2 className="userprofile__name">{this.props.userObject.name}</h2>
+            <h3 className="userprofile__bio">{this.props.userObject.bio}</h3>
+            </div>
+
+          </div>
+
         </div>
         <div className="userprofile__createarticle">
 
