@@ -31,7 +31,7 @@ class UserProfile extends Component {
 
           <div>
          
-          <img className={!this.props.userObject.photo ? "userprofile__userphoto" : "hide"} alt="user" src='../images/avatar.png' />
+          <img className={!this.props.userObject.photo ? "userprofile__userphoto" : "hide"} alt="user" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTssR7u-ZG8fTV6IfGOgC_jasQSsDVJbf__50KTpO4YpV5pkH8Hsg" />
 
           <img className={!this.props.userObject.photo ? "hide" : "userprofile__userphoto"} alt="user" src={this.props.userObject.photo} />
           
