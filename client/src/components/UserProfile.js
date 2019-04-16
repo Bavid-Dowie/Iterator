@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CreateArticle from './CreateArticle'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Logo from '../images/logo-dark.png'
 import Footer from '../components/Footer'
 
@@ -10,14 +10,13 @@ class UserProfile extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      userObject: [],
       userArticles: []
     }
     this.getUserArticles = this.getUserArticles.bind(this)
     this.renderUserArticles = this.renderUserArticles.bind(this)
   }
 
-  async componentDidMount(){
+  componentDidMount(){
       this.getUserArticles()
   }
 
@@ -30,6 +29,7 @@ class UserProfile extends Component {
   }
 
   renderUserArticles() {
+    console.log(this.props.userObject.id)
     if(this.state.userArticles.length >= 1) {
     return this.state.userArticles.map(article => {
         return (
@@ -48,6 +48,9 @@ class UserProfile extends Component {
   }
 
   render() {
+    if (this.props.userObject===null) {
+      return <Redirect to='/home'/>
+    }
     return (
       <div className="userprofile__body">
         <div className="userprofile__topnav">

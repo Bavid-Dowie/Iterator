@@ -36,7 +36,7 @@ class CreateArticle extends Component {
                 'Content-Type': 'application/json'
             }
         })
-        window.location.reload()
+        // window.location.reload()
     }
 
     render() {

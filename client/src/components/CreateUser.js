@@ -51,11 +51,10 @@ class CreateUser extends Component {
             localStorage.setItem('jwt', response.token);
             this.props.decodeToken(response.token)
         })
-        this.props.logInOut()
     }
 
     render() {
-        if (this.props.loggedin === true) 
+        if (this.props.userObject !== null) 
             {return <Redirect to={`/users/${this.state.username}`}/>}
         return (
             <div className="create-user">

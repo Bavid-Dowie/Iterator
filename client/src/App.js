@@ -26,6 +26,7 @@ class App extends Component {
     this.onArticleDelete = this.onArticleDelete.bind(this)
     this.renderAllArticles = this.renderAllArticles.bind(this)
     this.decodeToken = this.decodeToken.bind(this)
+    this.logOut = this.logOut.bind(this)
   }
 
   decodeToken(token) {
@@ -90,9 +91,10 @@ class App extends Component {
   }
  
   logOut () {
-    localStorage.clear()
-    this.setState({userObject: null})
-    return <Redirect to='/home' />
+    localStorage.removeItem("jwt");
+    this.setState({
+      userObject: null
+    })
   }
 
   render() {
