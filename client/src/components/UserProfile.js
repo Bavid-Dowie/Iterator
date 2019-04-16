@@ -29,7 +29,6 @@ class UserProfile extends Component {
   }
 
   renderUserArticles() {
-    console.log(this.props.userObject.id)
     if(this.state.userArticles.length >= 1) {
     return this.state.userArticles.map(article => {
         return (
@@ -69,7 +68,7 @@ class UserProfile extends Component {
         </div>
         <div className="userprofile__createarticle">
 
-        <CreateArticle userObject={this.props.userObject} />
+        <CreateArticle userObject={this.props.userObject} getUserArticles={this.getUserArticles} />
         </div>
         </div>
 
