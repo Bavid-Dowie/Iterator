@@ -59,23 +59,15 @@ class UserProfile extends Component {
         >Community</Link> 
         <button onClick = {this.props.logOut}>Logout</button>
         </div>
-
         <div className="userprofile__middlediv">
-
         <div className="userprofile__userinfo">
-
           <div className="userprofile__middle--left">
-
             <img className="userprofile__userphoto" alt="user" src={this.props.userObject.photo} />
-
             <div>
-
             <h2 className="userprofile__name">{this.props.userObject.name}</h2>
             <h3 className="userprofile__bio">{this.props.userObject.bio}</h3>
             </div>
-
           </div>
-
         </div>
         <div className="userprofile__createarticle">
 
