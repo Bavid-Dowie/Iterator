@@ -1,3 +1,9 @@
+.userprofile__body {
+    background-color: #F3F0F0;
+    height: 100%;
+    width: 100%;
+}
+
 .userprofile__topnav {
     display: flex;
     justify-content: space-between;
@@ -61,16 +67,21 @@
 
 a {
     text-decoration: none;
-    color: #90CFEC;
+    color: #142328;
 }
 
 .userprofile__article {
     text-align: center;
     width: 200px;
     height: 150px;
-    border: 1px dashed black;
     margin: 20px;
-    color: #142328
+    color: #142328;
+    background-color: rgba(144, 207, 238, 1);
+    border-radius: 5%;
+}
+
+.userprofile__article:hover {
+    background-color: rgba(144, 207, 238, 0.8);
 }
 
 .userprofile__article--title {
@@ -274,6 +285,12 @@ a {
     height: 40%;
 }
 
+.allarticles__body {
+    background-color: #F3F0F0;
+    height: 100%;
+    width: 100%;
+}
+
 .allarticles__backbtn {
     height: 20px;
     margin: 10px;
@@ -293,12 +310,12 @@ a {
     width: 200px;
     height: 150px;
     margin: 20px;
-    background-color: rgba(223, 255, 206,0.8);
-    border-radius: 8%;
+    background-color: rgba(144, 207, 238, 1);
+    border-radius: 5%;
 }
 
 .allarticles__article:hover {
-    background-color: rgba(223, 255, 206,0.4)
+    background-color: rgba(144, 207, 238, 0.8);
 }
 
 .allarticles__article--title {

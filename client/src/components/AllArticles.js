@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 const AllArticles = (props) => {
     return (
-        <div>
+        <div className="allarticles__body">
             <div className="userprofile__topnav">
                 <img alt="Iterator logo" src={Logo} />
                 <button className="allarticles__backbtn" onClick={props.history.goBack}>Back to Profile</button>

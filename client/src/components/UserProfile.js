@@ -56,7 +56,7 @@ class UserProfile extends Component {
 
   render() {
     return (
-      <div>
+      <div className="userprofile__body">
         <div className="userprofile__topnav">
         <img alt="Iterator logo" src={Logo} />
         <Link to={`/articles`}className="userprofile__community--link"
