@@ -18,14 +18,28 @@ class UserProfile extends Component {
       <div className="userprofile__body">
         <div className="userprofile__topnav">
         <img className="logo" alt="Iterator logo" src={Logo} />
-        <Link to={`/articles`}className="userprofile__community--link"
-        >Community</Link> 
-        <button onClick = {this.props.logOut}>Logout</button>
+        <div className="userprofile__nav--right">
+          <Link to={`/articles`}className="userprofile__community--link"
+          >Community Feed</Link> 
+          <button className="userprofile__logout--btn" onClick = {this.props.logOut}>Logout</button>
+        </div>
+
         </div>
         <div className="userprofile__middlediv">
         <div className="userprofile__userinfo">
           <div className="userprofile__middle--left">
-            <img className="userprofile__userphoto" alt="user" src={this.props.userObject.photo} />
+
+          <div>
+         
+          <img className={!this.props.userObject.photo ? "userprofile__userphoto" : "hide"} alt="user" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTssR7u-ZG8fTV6IfGOgC_jasQSsDVJbf__50KTpO4YpV5pkH8Hsg" />
+
+          <img className={!this.props.userObject.photo ? "hide" : "userprofile__userphoto"} alt="user" src={this.props.userObject.photo} />
+          
+          </div>
+
+
+
+
             <div>
             <h2 className="userprofile__name">{this.props.userObject.name}</h2>
             <h3 className="userprofile__bio">{this.props.userObject.bio}</h3>

@@ -43,7 +43,7 @@ class CreateArticle extends Component {
         return (
             <div className="userprofile__createarticle--field">
                 <h2>Create A New Article</h2>
-                <form onSubmit={this.onArticleSubmit} id="userArticle">
+                <form className="userprofile__createarticle--form" onSubmit={this.onArticleSubmit} id="userArticle">
                     <div className="field">
                         <label htmlFor="title">Title: </label>
                         <input onChange={this.onArticleCreate}
@@ -62,7 +62,7 @@ class CreateArticle extends Component {
                             type="text"
                             name="author"
                             placeholder="enter name"
-                            value={this.state.author}
+                            value={this.props.userObject.name}
                             required
                         />
                     </div>
@@ -77,7 +77,7 @@ class CreateArticle extends Component {
                             required
                         />                        
                     </div>
-                    <button input="field" type="submit">Create New Article</button>
+                    <button className="userprofile__createarticle--button" input="field" type="submit">Create New Article</button>
                 </form>
             </div>
         ) 
