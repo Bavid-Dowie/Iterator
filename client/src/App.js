@@ -10,6 +10,7 @@ import decode from 'jwt-decode'
 import axios from 'axios'
 
 const url = "https://iterator.herokuapp.com/articles/"
+const userArticlesURL = `https://iterator.herokuapp.com/userarticles/`
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +19,8 @@ class App extends Component {
       articles: "",
       userObject: null,
       username: "",
-      password: ""
+      password: "",
+      userArticles: []
     }
     this.loginChange = this.loginChange.bind(this)
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
@@ -27,6 +29,8 @@ class App extends Component {
     this.renderAllArticles = this.renderAllArticles.bind(this)
     this.decodeToken = this.decodeToken.bind(this)
     this.logOut = this.logOut.bind(this)
+    this.renderUserArticles = this.renderUserArticles.bind(this)
+    this.getUserArticles = this.getUserArticles.bind(this)
   }
 
   decodeToken(token) {
@@ -73,7 +77,8 @@ class App extends Component {
     }).then(response => {
       return response.json()
     })
-    this.getArticles()
+    this.getAllArticles()
+    this.getUserArticles()
   }
 
   renderAllArticles () {
@@ -88,6 +93,32 @@ class App extends Component {
         </div>
       )
     })
+  }
+
+  getUserArticles() {
+    fetch(`${userArticlesURL}${this.state.userObject.id}`)
+    .then(response => response.json())
+    .then(data => {
+        this.setState({ userArticles: data })
+    })
+  }
+
+  renderUserArticles() {
+    if(this.state.userArticles.length >= 1) {
+    return this.state.userArticles.map(article => {
+        return (
+          <div className="userprofile__article" 
+          key={article.id}>
+            <Link to={`/articles/${article.id}`}>
+            <div>
+              <p className="userprofile__article--title">{article.title}</p>
+              <p className="userprofile__article--author"> by {article.author}</p>
+            </div>
+            </Link>
+          </div>
+        )
+      })
+    }
   }
  
   logOut () {
@@ -119,6 +150,8 @@ class App extends Component {
             render={(props) =>
               <UserProfile
                 {...props}
+                getUserArticles={this.getUserArticles}
+                renderUserArticles={this.renderUserArticles}
                 userObject={this.state.userObject}
                 logOut={this.logOut}
               />}
@@ -135,8 +168,9 @@ class App extends Component {
             exact path='/articles/:id'
             render={(props) => 
               <Article
+                userObject={this.state.userObject}
                 onArticleDelete={this.onArticleDelete}
-                getArticles={this.getArticles}
+                getAllArticles={this.getAllArticles}
                 {...props} />}
           />
           <Route
@@ -144,7 +178,7 @@ class App extends Component {
             render={(props) => 
               <AllArticles
                 onArticleDelete={this.onArticleDelete}
-                getArticles={this.getArticles}
+                getAllArticles={this.getAllArticles}
                 renderAllArticles={this.renderAllArticles}
                 {...props} 
               />}

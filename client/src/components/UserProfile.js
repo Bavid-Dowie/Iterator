@@ -4,47 +4,10 @@ import { Link, Redirect } from 'react-router-dom'
 import Logo from '../images/logo-dark.png'
 import Footer from '../components/Footer'
 
-const url = `https://iterator.herokuapp.com/userarticles/`
-
 class UserProfile extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      userArticles: []
-    }
-    this.getUserArticles = this.getUserArticles.bind(this)
-    this.renderUserArticles = this.renderUserArticles.bind(this)
-  }
 
   componentDidMount(){
-      this.getUserArticles()
-  }
-
-  getUserArticles() {
-    fetch(`${url}${this.props.userObject.id}`)
-    .then(response => response.json())
-    .then(data => {
-        this.setState({ userArticles: data })
-    })
-  }
-
-  renderUserArticles() {
-    console.log(this.props.userObject.id)
-    if(this.state.userArticles.length >= 1) {
-    return this.state.userArticles.map(article => {
-        return (
-          <div className="userprofile__article" 
-          key={article.id}>
-            <Link to={`/articles/${article.id}`}>
-            <div>
-              <p className="userprofile__article--title">{article.title}</p>
-              <p className="userprofile__article--author"> by {article.author}</p>
-            </div>
-            </Link>
-          </div>
-        )
-    })
-    }
+      this.props.getUserArticles()
   }
 
   render() {
@@ -69,13 +32,13 @@ class UserProfile extends Component {
         </div>
         <div className="userprofile__createarticle">
 
-        <CreateArticle userObject={this.props.userObject} />
+        <CreateArticle userObject={this.props.userObject} getUserArticles={this.props.getUserArticles} />
         </div>
         </div>
 
         <div
         className="userprofile__articlescontainer">
-          {this.renderUserArticles()}
+          {this.props.renderUserArticles()}
         </div>
         <Footer />
     </div>

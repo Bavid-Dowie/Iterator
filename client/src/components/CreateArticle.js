@@ -36,7 +36,7 @@ class CreateArticle extends Component {
                 'Content-Type': 'application/json'
             }
         })
-        // window.location.reload()
+        await this.props.getUserArticles()
     }
 
     render() {
