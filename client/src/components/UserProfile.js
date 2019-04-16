@@ -17,18 +17,20 @@ class UserProfile extends Component {
     return (
       <div className="userprofile__body">
         <div className="userprofile__topnav">
-        <img alt="Iterator logo" src={Logo} />
+        <img className="logo" alt="Iterator logo" src={Logo} />
         <Link to={`/articles`}className="userprofile__community--link"
         >Community</Link> 
         <button onClick = {this.props.logOut}>Logout</button>
         </div>
-
         <div className="userprofile__middlediv">
-
         <div className="userprofile__userinfo">
-          <img className="userprofile__userphoto" alt="user" src={this.props.userObject.photo} />
-          <h2 className="userprofile__name">{this.props.userObject.name}</h2>
-          <h3 className="userprofile__bio">{this.props.userObject.bio}</h3>
+          <div className="userprofile__middle--left">
+            <img className="userprofile__userphoto" alt="user" src={this.props.userObject.photo} />
+            <div>
+            <h2 className="userprofile__name">{this.props.userObject.name}</h2>
+            <h3 className="userprofile__bio">{this.props.userObject.bio}</h3>
+            </div>
+          </div>
         </div>
         <div className="userprofile__createarticle">
 
