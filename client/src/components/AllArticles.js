@@ -7,13 +7,12 @@ const AllArticles = (props) => {
         <div>
             <div className="userprofile__topnav">
                 <img alt="Iterator logo" src={Logo} />
-                <button onClick={props.history.goBack}>Back to Profile</button>
+                <button className="allarticles__backbtn" onClick={props.history.goBack}>Back to Profile</button>
             </div>
             <div key={Math.random()}className="allarticles__articles--div">
                 {props.renderAllArticles()}
             </div>
         </div>
-
     )
 }
 

@@ -59,13 +59,15 @@ class UserProfile extends Component {
       <div>
         <div className="userprofile__topnav">
         <img alt="Iterator logo" src={Logo} />
-        <Link to={`/articles`}className="userprofile__community--link" href="#">Community</Link> 
+        <Link to={`/articles`}className="userprofile__community--link"
+        >Community</Link> 
+        <Link to="/home"><button>Logout</button></Link>
         </div>
 
         <div className="userprofile__middlediv">
 
         <div className="userprofile__userinfo">
-          {/* <img alt="user photo" src={this.props.match.params.photo} /> */}
+          <img className="userprofile__userphoto" alt="user photo" src={this.state.userObject.photo} />
           <h2 className="userprofile__name">{this.state.userObject.name}</h2>
           <h3 className="userprofile__bio">{this.state.userObject.bio}</h3>
         </div>
@@ -79,7 +81,6 @@ class UserProfile extends Component {
         className="userprofile__articlescontainer">
           {/* {this.renderUserArticles()} */}
         </div>
-      <div><Link to="/home"><button>Logut</button></Link></div>
     </div>
     )
   }
