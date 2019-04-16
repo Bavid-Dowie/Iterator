@@ -67,7 +67,7 @@ class UserProfile extends Component {
         <div className="userprofile__middlediv">
 
         <div className="userprofile__userinfo">
-          <img className="userprofile__userphoto" alt="user photo" src={this.state.userObject.photo} />
+          <img className="userprofile__userphoto" alt="user" src={this.state.userObject.photo} />
           <h2 className="userprofile__name">{this.state.userObject.name}</h2>
           <h3 className="userprofile__bio">{this.state.userObject.bio}</h3>
         </div>

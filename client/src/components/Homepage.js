@@ -44,7 +44,7 @@ const Homepage = (props) => {
                         <Link to="/create-profile"><button className="homepage_signup-button" onClick={props.logInOut}>Sign up</button></Link>
                     </div>
                     <div className="homepage__image">
-                        <img src={image} className="home-image"/>
+                        <img src={image} alt="" className="home-image"/>
                     </div>
                 </div>
             </div>
