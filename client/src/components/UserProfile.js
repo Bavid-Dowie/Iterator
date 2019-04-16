@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CreateArticle from './CreateArticle'
 import { Link } from 'react-router-dom'
 import Logo from '../images/logo-dark.png'
+import Footer from '../components/Footer'
 
 const url = `https://iterator.herokuapp.com/userarticles/`
 
@@ -81,6 +82,7 @@ class UserProfile extends Component {
         className="userprofile__articlescontainer">
           {this.renderUserArticles()}
         </div>
+        <Footer />
     </div>
     )
   }
