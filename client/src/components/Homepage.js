@@ -28,13 +28,15 @@ const Homepage = (props) => {
                                 type="text" 
                                 name="username" 
                                 placeholder="username" 
-                                value={props.currentUser}
+                                value={props.username}
                                 onChange={props.loginChange}
                             ></input>
                         </div>
                         <div className="homepage__login-field">
                             <label className="homepage__login-label" htmlFor="password">password </label>
-                            <input className="login-input" type="password" name="password" placeholder="password" value={props.userPassword}></input>
+                            <input className="login-input" type="password" name="password" placeholder="password" value={props.userPassword}
+                            onChange={props.loginChange}>
+                            </input>
                         </div>
                         <button type="submit" className="login-button">Log in</button>
                     </form>
