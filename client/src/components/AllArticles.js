@@ -16,6 +16,6 @@ const AllArticles = (props) => {
             <Footer />
         </div>
     )
-}
+} 
 
 export default withRouter(AllArticles)
