@@ -213,7 +213,8 @@ a {
 }
 
 .homepage__description-text {
-    margin: 100px 30px 100px 100px;
+    margin: 100px 30px 100px 90px;
+    padding-right: 20px;
 }
 
 .home-image {
@@ -223,6 +224,7 @@ a {
 
 .homepage__about {
     width: 100%;
+    margin-bottom: 40px;
 }
 
 .homepage__about-howto {
