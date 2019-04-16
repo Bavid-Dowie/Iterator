@@ -41,8 +41,9 @@ class App extends Component {
 
   getAllArticles() {
     fetch(url)
-      .then(response => response.json())
-      .then(json => this.setState({articles: json}))
+      .then(response => console.log(response))
+      // .then(response => response.json())
+      // .then(json => this.setState({articles: json}))
   }
 
   componentDidMount() {

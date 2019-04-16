@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 const {User, Article} = require ('./models')
 const PORT = process.env.PORT || 3001   
 
-app.get('/', restrict, (req, res) => res.send('Sup yo'))
+app.get('/', (req, res) => res.send('Sup yo'))
 
 const buildAuthResponse = (user) => {
     const token_data = {
@@ -61,7 +61,7 @@ app.get('/users/:username', async (req, res) => {
     }
 })
 
-app.post('/users/register', restrict, async (req, res) => {
+app.post('/users/register', async (req, res) => {
     try {
         const password_digest = await hashPassword(req.body.password);
 
@@ -80,7 +80,7 @@ app.post('/users/register', restrict, async (req, res) => {
     }
 })
 
-app.post('/users/login', restrict, async (req, res) => {
+app.post('/users/login', async (req, res) => {
     try {
         const user = await User.findOne({
             where: {
@@ -99,7 +99,7 @@ app.post('/users/login', restrict, async (req, res) => {
     }
 })
 
-app.post('/articles', restrict, async (req, res) => {
+app.post('/articles', async (req, res) => {
     try {
         const newArticle = await Article.create(req.body)
         res.json(newArticle)
@@ -128,7 +128,7 @@ app.get('/userarticles/:userId', async (req, res) => {
     }
 })
 
-app.put('/users/:id', restrict, async (req, res) => {
+app.put('/users/:id', async (req, res) => {
     try {
         const userId = req.params.id
         const updatedUser = {
@@ -145,7 +145,7 @@ app.put('/users/:id', restrict, async (req, res) => {
     }
 })
 
-app.put('/articles/:id', restrict, async (req, res) => {
+app.put('/articles/:id', async (req, res) => {
     try {
         const articleId = parseInt(req.params.id)
         const updateArticle = {
@@ -162,7 +162,7 @@ app.put('/articles/:id', restrict, async (req, res) => {
 })
 
 
-app.delete('/users/:id', restrict, async (req, res) => {
+app.delete('/users/:id', async (req, res) => {
     try {
       const id = req.params.id;
       const user = await User.destroy({ where: {id: id} });
@@ -173,7 +173,7 @@ app.delete('/users/:id', restrict, async (req, res) => {
     }
   });
 
-  app.delete('/articles/:id', restrict, async (req, res) => {
+  app.delete('/articles/:id', async (req, res) => {
     try {
       const id = req.params.id;  
       const article = await Article.destroy({ where: {id: id} });
