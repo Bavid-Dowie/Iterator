@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CreateArticle from './CreateArticle'
 import { Link } from 'react-router-dom'
-import Logo from '../logo-dark.png'
+import Logo from '../images/logo-dark.png'
 
 const url = `https://iterator.herokuapp.com/userarticles/`
 

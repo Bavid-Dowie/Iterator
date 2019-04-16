@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../logo-dark.png'
+import Logo from '../images/logo-dark.png'
 import { withRouter } from 'react-router-dom';
 
 const AllArticles = (props) => {
