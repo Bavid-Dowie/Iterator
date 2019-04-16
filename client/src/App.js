@@ -129,7 +129,8 @@ class App extends Component {
                 onArticleDelete={this.onArticleDelete}
                 getArticles={this.getArticles}
                 renderAllArticles={this.renderAllArticles}
-                {...props} />}
+                {...props} 
+              />}
           />
           <Route 
             exact path='/create-profile'

@@ -27,6 +27,12 @@
     font-size: 20px;
 }
 
+.userprofile__userphoto {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
 .userprofile__createarticle {
     margin-right: 20%;
     font-size: 12px;
@@ -151,6 +157,11 @@ a {
     line-height: 30px;
 }
 
+.allarticles__backbtn {
+    height: 20px;
+    margin: 10px;
+}
+
 .allarticles__articles--div {
     display: flex;
     flex-direction: row;
@@ -164,8 +175,13 @@ a {
     text-align: center;
     width: 200px;
     height: 150px;
-    border: 1px dashed black;
     margin: 20px;
+    background-color: rgba(223, 255, 206,0.8);
+    border-radius: 8%;
+}
+
+.allarticles__article:hover {
+    background-color: rgba(223, 255, 206,0.4)
 }
 
 .allarticles__article--title {
