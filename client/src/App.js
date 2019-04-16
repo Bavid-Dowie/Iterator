@@ -91,7 +91,7 @@ class App extends Component {
     return this.state.articles.map(article => {
       return (
         <div className="allarticles__article">
-          <Link to={`articles/${article.id}`}><div>
+          <Link to={`/articles/${article.id}`}><div>
             <p className="allarticles__article--title">{article.title}</p>
             <p className="allarticles__article--author"> by {article.author}</p>
             </div></Link>
