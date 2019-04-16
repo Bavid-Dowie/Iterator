@@ -35,6 +35,14 @@ const maddy = await User.create({
     photo: 'https://miro.medium.com/max/2400/0*ndGW1W4oojUgz2H0.jpg'
 })
 
+const jeremy = await User.create({
+    name: 'Jeremy Zimmerman',
+    email: 'jtzimmerm@gmail.com',
+    username: 'jzimmerm',
+    bio: 'Web Development student at General Assemply & NYC based musician',
+    photo: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/34441735_10100275668090830_9046594004744929280_n.jpg?_nc_cat=107&_nc_ht=scontent-lga3-1.xx&oh=9a31f70a34b171cb05764fc20c40097d&oe=5D2F0C96'
+})
+
 const codeMovies = await Article.create({
     title: 'Five Movies that Vastly Misrepresent the Life of a Coder',
     author: 'Maddy Rombes',
@@ -71,6 +79,42 @@ const karaoke = await Article.create({
     content: 'Dead salvation reason merciful chaos oneself enlightenment horror christian grandeur inexpedient. Spirit transvaluation love ultimate endless revaluation inexpedient of will reason convictions truth play. Endless evil merciful endless evil oneself. Grandeur burying decrepit ideal disgust. Faithful abstract christian depths war. Aversion derive truth passion suicide intentions overcome philosophy against salvation intentions faithful decieve. Battle law spirit derive of merciful superiority ascetic grandeur salvation.'
 })
 
+const appsAndAudio = await Article.create({
+    title: 'Coding to Increase my Digital Presence',
+    author: 'Jeremy Zimmerman',
+    content: 'Cosmic ocean worldlets encyclopaedia galactica rings of Uranus another world network of wormholes. As a patch of light stirred by starlight extraordinary claims require extraordinary evidence muse about astonishment something incredible is waiting to be known? Concept of the number one the carbon in our apple pies kindling the energy hidden in matter finite but unbounded dispassionate extraterrestrial observer the only home we\'ve ever known. Concept of the number one brain is the seed of intelligence two ghostly white figures in coveralls and helmets are soflty dancing citizens of distant epochs with pretty stories for which there\'s little good evidence a very small stage in a vast cosmic arena and billions upon billions upon billions upon billions upon billions upon billions upon billions.'
+})
+
+const codingSound = await Article.create({
+    title: 'Digital and Analog Sound',
+    author: 'Jeremy Zimmerman',
+    content: 'Fo shizzle ass, sem funky fresh blandizzle posuere, nibh quam I\'m in the shizzle shit, break it down daahng dawg magna justo pellentesque . Maecenizzle crazy, cool things fizzle fermentizzle, ipsizzle mauris dizzle gizzle, izzle tellivizzle nisl boom shackalack sed gangster. Morbi yo mamma shizzlin dizzle, check out this quizzle, malesuada volutpizzle, i saw beyonces tizzles and my pizzle went crizzle et, ma nizzle. You son of a bizzle own yo\'. Curabitur pizzle, nulla mah nizzle bling bling we gonna chung, da bomb bizzle facilisizzle dui, shiznit bibendum pede things nizzle shut the shizzle up. Donec lectus. Nizzle shizzlin dizzle dui cool sem ornare nonummy. Ass cursus, turpis vel shizzlin dizzle sollicitudizzle, da bomb purizzle break it down rizzle, dang amizzle laorizzle mi felis gangsta massa. Cras we gonna chung orci. In hizzle habitasse izzle dictumst. Maecenizzle sizzle sizzle, faucibizzle ac, stuff for sure, mammasay mammasa mamma oo sa ac, quam. Aliquam brizzle sizzle, tellivizzle vizzle, ultrices quizzle, break yo neck, yall pimpin\', stuff. Dizzle own yo\' magna at quizzle pizzle vulputate. Lorem ipsum for sure sit amet, consectetuer adipiscing elizzle.'
+})
+
+const sightThruSound = await Article.create({
+    title: 'Need to make an Audio Visualizer',
+    author: 'Jeremy Zimmerman',
+    content: 'The first step to doing anything is to believe you can do it. See it finished in your mind before you ever start. If there\'s two big trees invariably sooner or later there\'s gonna be a little tree. All those little son of a guns. We don\'t have to be committed. We are just playing here. Get away from those little Christmas tree things we used to make in school. I\'m sort of a softy, I couldn\'t shoot Bambi except with a camera. You can create the world you want to see and be a part of. You have that power. Let\'s go up in here, and start having some fun Very easy to work these to death. You\'re the greatest thing that has ever been or ever will be. You\'re special. You\'re so very special. The little tiny Tim easels will let you down. We don\'t have anything but happy trees here.'
+})
+
+const brokeAndRecord = await Article.create({
+    title: 'Recording on the Cheap',
+    author: 'Jeremy Zimmerman',
+    content: 'Farm-to-table post-ironic keffiyeh heirloom cold-pressed semiotics four loko freegan food truck franzen readymade shabby chic wolf. Freegan fam viral cronut seitan stumptown, lyft DIY woke 3 wolf moon typewriter cold-pressed beard taiyaki celiac. Banh mi authentic direct trade chambray kinfolk. Cliche shoreditch authentic, chicharrones PBR&B copper mug cold-pressed adaptogen activated charcoal gastropub mustache taxidermy bespoke. Single-origin coffee beard shoreditch leggings cliche post-ironic church-key jean shorts woke trust fund crucifix.'
+})
+
+const reactAudio = await Article.create({
+    title: 'Make Page Sound Awesome With reactAudio!',
+    author: 'Jeremy Zimmerman',
+    content: 'If you\'re suggesting I play favorites, you\'re wrong. I love all of my children equally. [earlier] I don\'t care for Gob. You stay on top of her Buddy. Don\'t be afraid to ride her. Hard. If I make this comeback, I\'ll buy you a hundred George Michaels that you can teach to drive! You\'re Killing Me, Buster. Friday night. I could use a leather jacket for when I\'m on my hog and have to go into a controlled slide. Happy. That was Tom Cruise, the actor. Lucille: They said he was some kind of scientist. Michael was having brunch with Sally Sitwell at a restaurant called Skip Church\'s Bistro. In addition to brunch, the restaurant was known for an item on the menu called the "Skip\'s Scramble", an omelet that contained everything on the menu. Do not order the Skip\'s Scramble.'
+})
+
+const iLikeCats = await Article.create({
+    title: 'Cats and other Fuzzy Things',
+    author: 'Jeremy Zimmerman',
+    content: 'Drool sleep in the bathroom sink warm up laptop with butt lick butt fart rainbows until owner yells pee in litter box hiss at cats bathe private parts with tongue then lick owner\'s face. Flop over cat mojo meow and walk away and as lick i the shoes and walk on car leaving trail of paw prints on hood and windshield and purr as loud as possible, be the most annoying cat that you can, and, knock everything off the table. Eats owners hair then claws head and sometimes switches in french and say "miaou" just because well why not, poop on grasses, and eat the rubberband meow to be let out. Meowing chowing and wowing. Sleep on keyboard be a nyan cat, feel great about it, be annoying 24/7 poop rainbows in litter box all day or hide when guests come over. Chew foot, yet woops poop hanging from butt must get rid run run around house drag poop on floor maybe it comes off woops left brown marks on floor human slave clean lick butt now hide when guests come over, so scratch me there, elevator butt but where is my slave? I\'m getting hungry meeeeouw. Taco cat backwards spells taco cat toy mouse squeak roll over or sleep on my human\'s head scratch at fleas, meow until belly rubs, hide behind curtain when vacuum cleaner is on scratch strangers and poo on owners food yet crash against wall but walk away like nothing happened purrr purr littel cat, little cat purr purr yet you are a captive audience while sitting on the toilet, pet me.'
+})
+
 // association
 
 await article1.setUser(test1)
@@ -80,6 +124,12 @@ await dreamJob.setUser(maddy)
 await faveBooks.setUser(maddy)
 await etsyAPI.setUser(maddy)
 await karaoke.setUser(maddy)
+await appsAndAudio.setUser(jeremy)
+await codingSound.setUser(jeremy)
+await sightThruSound.setUser(jeremy)
+await brokeAndRecord.setUser(jeremy)
+await reactAudio.setUser(jeremy)
+await iLikeCats.setUser(jeremy)
 
 process.exit()
 
