@@ -44,9 +44,9 @@ class UpdateArticle extends Component {
 
     render() {
         return (
-            <div className="updatearticle__div">
-                <h2 className="updatearticle__updatearticle">Update Your Article</h2>
-                <form onSubmit={async (e) =>{
+            <div className="updatearticle__container">
+                <div className="updatearticle__title">Update Your Article</div>
+                <form className="updatearticle__form" onSubmit={async (e) =>{
                     await this.onUpdateSubmit(e)
                     this.setState({
                         title: "",
@@ -55,30 +55,30 @@ class UpdateArticle extends Component {
                     })
                     window.location.reload()
                 }}>
-                    <div className="field">
+                    <div className="updatearticle__field">
                         <label htmlFor="title">Title: </label>
                         <input onChange={this.onUpdateChange}
-                            className="input"
+                            className="updatearticle__input"
                             type="text"
                             name="title"
                             placeholder="change title"
                             value={this.state.title}
                         />
                     </div>
-                    <div className="field">
+                    <div className="updatearticle__field">
                         <label htmlFor="author">By: </label>
                         <input onChange={this.onUpdateChange}
-                            className="input"
+                            className="updatearticle__input"
                             type="text"
                             name="author"
                             placeholder="change names"
                             value={this.state.author}
                         />
                     </div>
-                    <div className="field">
+                    <div className="updatearticle__field">
                         <label htmlFor="content">Article Body: </label>
                         <textarea onChange={this.onUpdateChange}
-                            className="input"
+                            className="updatearticle__input"
                             type="text"
                             name="content"
                             placeholder="update text here"
