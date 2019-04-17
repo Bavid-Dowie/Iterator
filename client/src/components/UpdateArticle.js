@@ -8,7 +8,8 @@ class UpdateArticle extends Component {
         this.state = {
             title: "",
             author: "",
-            content: ""
+            content: "",
+            userObject: ""
         }
         this.onUpdateChange = this.onUpdateChange.bind(this)
         this.onUpdateSubmit = this.onUpdateSubmit.bind(this)
@@ -46,14 +47,13 @@ class UpdateArticle extends Component {
             <div className={this.props.userObject.id === this.props.article.userId ? "updatearticle__container" : "hide"}>
                 <div className="updatearticle__title">Update Your Article</div>
                 <form className="updatearticle__form" onSubmit={async (e) =>{
-
+                    e.preventDefault()
                     await this.onUpdateSubmit(e)
                     this.setState({
                         title: "",
                         author: "",
                         content: ""
                     })
-                    window.location.reload()
                 }}>
                     <div className="updatearticle__field">
                         <label className="updatearticle__label" htmlFor="title">title</label>
