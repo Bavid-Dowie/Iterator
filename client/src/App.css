@@ -545,21 +545,59 @@ a {
     border: none;
 }
 
-.updatearticle__div {
-    text-align: center;
-    margin-top: 50px;
+.updatearticle__container {
+    background-color: #2e3192;
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    opacity: 0.80;
 }
 
-.updatearticle__updatearticle {
-    font-size: 18px;
+.updatearticle__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+.updatearticle__title {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 17pt;
+    border-bottom: 2px dashed #FF0000;
+}
+
+.updatearticle__field {
+    line-height: 25px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.updatearticle__label {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 10pt;
+}
+
+.updatearticle__input {
+    margin-bottom: 5px;
 }
 
 .updatearticle__submit--button {
-    width: 50px;
-    margin: auto;
-    margin-top: 10px;
     border-radius: 4px;
     border: none;
+    width: 100px;
+    padding: 7px;
+    margin: 5px 5px 5px 0px;
+    background-color: #8393CA;
+    color: white;
+    opacity: 0.97;
+}
+
+.updatearticle__submit--button:hover {
+    opacity: 1;
+    border: 1px solid lightgrey;
 }
 
 .article__logo {
