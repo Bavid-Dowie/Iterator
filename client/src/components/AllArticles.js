@@ -9,7 +9,7 @@ const AllArticles = (props) => {
     return (
         <div className="allarticles__body">
             <div className="userprofile__topnav">
-                <img className="allarticles__logo" alt="Iterator logo" src={Logo} />
+            <Link to={`/users/${props.userObject.username}`}><img className="allarticles__logo" alt="Iterator logo" src={Logo} /></Link>
                 <Link to={`/users/${props.userObject.username}`}><button className="allarticles__backbtn">Back to Profile</button></Link>
             </div>
             <div className="articles_banner">
