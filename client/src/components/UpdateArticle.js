@@ -30,7 +30,6 @@ class UpdateArticle extends Component {
             content: this.state.content || this.props.article.content
         }
 
-        console.log(data.id)
         await fetch(`${url}${data.id}`, {
             method: 'PUT',
             body: JSON.stringify(data),
