@@ -538,11 +538,18 @@ a {
 }
 
 .article__delete--btn {
-    width: 90px;
-    margin: auto;
     margin-top: 70px;
     border-radius: 4px;
     border: none;
+    width: 100px;
+    padding: 8px;
+    margin: 5px 5px 5px 0px;
+    background-color: #FF0000;
+    color: white;
+}
+
+.article__delete--btn:hover {
+    border: 1px solid lightgrey;
 }
 
 .updatearticle__container {
