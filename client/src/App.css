@@ -438,8 +438,10 @@ a {
 
 .articles__banner-photo {
     background-position: center;
-    /* width: 100vw; */
-    height: 25rem;
+    margin: center;
+    /* opacity: .7; */
+    width: 100vw;
+    /* height: 25rem; */
 }
 
 .register {
