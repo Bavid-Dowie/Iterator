@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 import UpdateArticle from './UpdateArticle';
+import Footer from './Footer'
+import Logo from '../images/logo-dark.png'
 
 const url = 'https://iterator.herokuapp.com/articles/'
 
@@ -30,18 +32,20 @@ class Article extends Component {
   render() {
     return (
       <div className="article__page">
+        <img className="article__logo" alt="Iterator logo" src={Logo} />
       <Link to={`/users/${this.props.userObject.username}`}><button>Back to Profile</button></Link>
       <Link to='/articles'><button>Back to Community</button></Link>
         <div className="article__page-details">
           <div className="article__page-title">{this.state.article.title}</div>
-          <p className="article__page-author">{this.state.article.author}</p>
+          <p className="article__page-author">by {this.state.article.author}</p>
           <div className="article__page-content">{this.state.article.content}</div>
         </div>
         <UpdateArticle id={this.props.match.params.id} article={this.state.article} getArticle={this.getArticle}/>
-        <button id={this.state.article.id} className="delete-article-button" onClick={(e => {
+        <button id={this.state.article.id} className="article__delete--btn" onClick={(e => {
           this.props.onArticleDelete(e)
           this.props.history.push(`/users/${this.props.userObject.username}`)
         })}>Delete Article</button>
+        <Footer />
       </div>
     )
   }
