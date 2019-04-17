@@ -4,9 +4,6 @@ import articleTech from '../images/articles_banner.png'
 import { withRouter } from 'react-router-dom';
 import Footer from '../components/Footer'
 
-const getRandomNum = () => {
-    return Math.floor(Math.random() * 206)
-}
 
 const AllArticles = (props) => {
     return (
@@ -18,7 +15,7 @@ const AllArticles = (props) => {
             <div className="articles_banner">
                 <img src={articleTech} alt="" className="articles__banner-photo" />
             </div>
-            <div key={Math.random()} className="allarticles__articles--div">
+            <div className="allarticles__articles--div">
                 {props.renderAllArticles()}
             </div>
             <Footer />
