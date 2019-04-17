@@ -149,21 +149,28 @@ a {
 }
 
 .userprofile__article {
-    text-align: left;
-    width: 200px;
-    height: 150px;
+    text-align: center;
+    width: 300px;
+    height: 250px;
     margin: 20px;
-    color: #142328;
-    background-color: rgba(182, 182, 182, 0.4);
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    border-bottom: 2px black solid;
 }
 
 .userprofile__article:hover {
-    background-color: rgba(144, 207, 238, 0.8);
+    background-color: rgba(206, 220, 228, 0.3);
+    box-shadow: 8px 8px rgba(209, 216, 220, 0.6);
 }
 
 .userprofile__article--title {
-    font-size: 20px;
-    margin-left: 5px;
+    font-size: 12pt;
+    height: 40px;
+    color: #2b2b2b;
+    border-bottom: 1px black solid;
+    width: 100%;
+    font-weight: 600;
+    display: inline-block;
 }
 
 .userprofile__article--author {
