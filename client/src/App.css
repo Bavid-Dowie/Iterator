@@ -411,8 +411,6 @@ a {
     margin: 20px;
     font-family: 'Poppins', sans-serif;
     text-align: left;
-    /* border-bottom: 2px black solid; */
-    /* background-color: rgba(144, 207, 238, 1); */
 }
 
 .allarticles__article:hover {
@@ -438,7 +436,6 @@ a {
 
 .articles__banner-photo {
     background-position: center;
-    /* width: 100vw; */
     height: 25rem;
 }
 
