@@ -16,9 +16,11 @@ class Article extends Component {
   }
 
   getArticle() {
+    console.log('This works')
     fetch(`${url}${this.props.match.params.id}`)
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         this.setState({ article: data })
       })
   }
@@ -30,7 +32,7 @@ class Article extends Component {
   render() {
     return (
       <div className="article__page">
-        <img className="article__logo" alt="Iterator logo" src={Logo} />
+        <Link to={`/users/${this.props.userObject.username}`}><img className="article__logo" alt="Iterator logo" src={Logo} /></Link>
         <Link to={`/users/${this.props.userObject.username}`}><button>Back to Profile</button></Link>
         <Link to='/articles'><button>Back to Community</button></Link>
 
@@ -40,14 +42,10 @@ class Article extends Component {
           <div className="article__page-content">{this.state.article.content}</div>
         </div>
         <UpdateArticle id={this.props.match.params.id} userObject={this.props.userObject} article={this.state.article} getArticle={this.getArticle}/>
-        <button 
-          id={this.state.article.id} 
-          className={this.props.userObject.id === this.state.article.userId ? "article__delete--btn" : "hide"} 
-          onClick={(e => {
-            this.props.onArticleDelete(e)
-            this.props.history.push(`/users/${this.props.userObject.username}`)
-          })}>Delete Article
-        </button>
+        <button id={this.state.article.id} className="article__delete--btn" onClick={(e => {
+          this.props.onArticleDelete(e)
+          this.props.history.push(`/users/${this.props.userObject.username}`)
+        })}>Delete Article</button>
         <Footer />
       </div>
     )
