@@ -44,8 +44,8 @@ class UpdateArticle extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Update Your Article</h2>
+            <div className="updatearticle__div">
+                <h2 className="updatearticle__updatearticle">Update Your Article</h2>
                 <form onSubmit={async (e) =>{
                     await this.onUpdateSubmit(e)
                     this.setState({
@@ -86,7 +86,7 @@ class UpdateArticle extends Component {
                             hello
                             </textarea>
                     </div>
-                    <button type="submit" className="button">Submit</button>
+                    <button type="submit" className="updatearticle__submit--button">Submit</button>
                 </form>
             </div>
         )

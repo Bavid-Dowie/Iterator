@@ -454,11 +454,18 @@ a {
     align-self: center;
 } 
 
+.article__page-content {
+    text-justify: inter-word;
+    text-align: justify;
+    line-height: 22px;
+}
+
 .article__page-title {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 30pt;
     color: #142328;
     text-align: center;
+    margin-top: 20px;
 }
 
 .article__page-author {
@@ -472,4 +479,33 @@ a {
 .article__top-image {
     height: 210px;
     opacity: 0.90;
+}
+
+.article__delete--btn {
+    width: 90px;
+    margin: auto;
+    margin-top: 70px;
+    border-radius: 4px;
+    border: none;
+}
+
+.updatearticle__div {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.updatearticle__updatearticle {
+    font-size: 18px;
+}
+
+.updatearticle__submit--button {
+    width: 50px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+.article__logo {
+
 }
