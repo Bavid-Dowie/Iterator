@@ -27,6 +27,18 @@ Iterator is an application for developers - professional and student - and anybo
 - react-router-dom
 - react-sticky-footer
 
+##INSTALLATION INSTRUCTIONS
+- Git clone
+- npm install
+- createdb iterator_db
+- node scripts/resetDb.js
+- node scripts/seedDb.js
+- npm start
+- cd Client
+- npm install
+- npm start
+
+
 ## ERD
 
 ![Iterator ERD](/readme_links/iterator_erd.png)
