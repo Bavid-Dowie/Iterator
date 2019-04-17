@@ -475,7 +475,7 @@ a {
 }
 
 .article__page {
-    display: flex;
+    /* display: flex; */
     height: 100%;
     flex-direction: column;
     justify-content: center;
@@ -488,6 +488,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-self: center;
+    text-align: center;
 } 
 
 .article__page-content {
@@ -543,5 +544,7 @@ a {
 }
 
 .article__logo {
-
+    height: 40px;
+    margin: 10px 10px 0px 10px;
+    padding: 6px 0px 0px 0px;
 }
