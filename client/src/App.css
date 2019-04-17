@@ -382,8 +382,11 @@ a {
 }
 
 .allarticles__backbtn {
-    height: 20px;
-    margin: 10px;
+    width: 70px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: none;
 }
 
 .allarticles__articles--div {
