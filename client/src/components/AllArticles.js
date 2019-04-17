@@ -12,7 +12,7 @@ const AllArticles = (props) => {
     return (
         <div className="allarticles__body">
             <div className="userprofile__topnav">
-                <img alt="Iterator logo" src={Logo} />
+                <img className="allarticles__logo" alt="Iterator logo" src={Logo} />
                 <button className="allarticles__backbtn" onClick={props.history.goBack}>Back to Profile</button>
             </div>
             <div className="articles_banner">
