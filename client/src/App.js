@@ -182,6 +182,7 @@ class App extends Component {
             exact path='/articles/'
             render={(props) => 
               <AllArticles
+                userObject={this.state.userObject}
                 onArticleDelete={this.onArticleDelete}
                 getAllArticles={this.getAllArticles}
                 renderAllArticles={this.renderAllArticles}
