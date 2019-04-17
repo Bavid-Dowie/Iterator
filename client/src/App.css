@@ -82,7 +82,11 @@ body {
 }
 
 .userprofile__createarticle--field {
+    border-radius: 15px;
     line-height: 25px;
+    background-color: #a6d9ec;
+    padding: 20px;
+    width: 300px;
 }
 
 .userprofile__createarticle--form {
@@ -136,6 +140,12 @@ a {
 
 .article {
     margin-top: 50px;
+}
+
+.userprofile__createarticle-title {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 15pt;
 }
 
 .header {
