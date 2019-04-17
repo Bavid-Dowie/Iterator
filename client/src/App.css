@@ -81,17 +81,51 @@ body {
     color: #142328
 }
 
+.userprofile__createarticle--container {
+    background-color: #2e3192;
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    opacity: 0.80;
+}
+
+.userprofile__createarticle-title {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 17pt;
+    border-bottom: 2px dashed #FF0000;
+}
+
 .userprofile__createarticle--field {
     line-height: 25px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
 }
 
 .userprofile__createarticle--form {
     border-radius: 15px;
 }
 
+.userprofile__createarticle--label {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 10pt;
+}
+
 .userprofile__createarticle--button {
     border-radius: 4px;
     border: none;
+    padding: 7px;
+    margin: 5px 5px 5px 0px;
+    background-color: #8393CA;
+    color: white;
+    opacity: 0.97;
+}
+
+.userprofile__createarticle--button:hover {
+    opacity: 1;
+    border: 1px solid lightgrey;
 }
 
 .userprofile__articlescontainer {
