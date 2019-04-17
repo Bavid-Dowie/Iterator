@@ -435,6 +435,7 @@ a {
 .articles__banner-photo {
     background-position: center;
     height: 25rem;
+    width: 100vw;
 }
 
 .register {

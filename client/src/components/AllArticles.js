@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../images/logo-dark.png'
-import articleTech from '../images/articles_banner.png'
+import articleTech from '../images/articles_test_banner.png'
 import { withRouter, Link } from 'react-router-dom';
 import Footer from '../components/Footer'
 
