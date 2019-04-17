@@ -44,9 +44,9 @@ class UpdateArticle extends Component {
 
     render() {
         return (
-            <div className={this.props.userObject.id === this.props.article.userId ? "updatearticle__div" : "hide"}>
-                <h2 className="updatearticle__updatearticle">Update Your Article</h2>
-                <form onSubmit={async (e) =>{
+            <div className={this.props.userObject.id === this.props.article.userId ? "updatearticle__container" : "hide"}>
+                <h2 className="updatearticle__title">Update Your Article</h2>
+                <form className="updatearticle__form" onSubmit={async (e) =>{
                     await this.onUpdateSubmit(e)
                     this.setState({
                         title: "",
@@ -55,35 +55,34 @@ class UpdateArticle extends Component {
                     })
                     window.location.reload()
                 }}>
-                    <div className="field">
-                        <label htmlFor="title">Title: </label>
+                    <div className="updatearticle__field">
+                        <label className="updatearticle__label" htmlFor="title">title</label>
                         <input onChange={this.onUpdateChange}
-                            className="input"
+                            className="updatearticle__input"
                             type="text"
                             name="title"
                             placeholder="change title"
                             value={this.state.title}
                         />
                     </div>
-                    <div className="field">
-                        <label htmlFor="author">By: </label>
+                    <div className="updatearticle__field">
+                        <label className="updatearticle__label" htmlFor="author">author</label>
                         <input onChange={this.onUpdateChange}
-                            className="input"
+                            className="updatearticle__input"
                             type="text"
                             name="author"
                             placeholder="change names"
                             value={this.state.author}
                         />
                     </div>
-                    <div className="field">
-                        <label htmlFor="content">Article Body: </label>
+                    <div className="updatearticle__field">
+                        <label className="updatearticle__label" htmlFor="content">article content</label>
                         <textarea onChange={this.onUpdateChange}
-                            className="input"
+                            className="updatearticle__input"
                             type="text"
                             name="content"
                             placeholder="update text here"
                             value={this.state.content}>
-                            hello
                             </textarea>
                     </div>
                     <button type="submit" className="updatearticle__submit--button">Submit</button>
