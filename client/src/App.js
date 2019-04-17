@@ -90,7 +90,7 @@ class App extends Component {
     if (Array.isArray(this.state.articles) === true)
     return this.state.articles.map(article => {
       return (
-        <div className="allarticles__article">
+        <div className="allarticles__article" key={article.id}>
           <Link to={`/articles/${article.id}`}><div>
             <p className="allarticles__article--title">{article.title}</p>
             <p className="allarticles__article--author"> by {article.author}</p>
@@ -182,6 +182,7 @@ class App extends Component {
             exact path='/articles/'
             render={(props) => 
               <AllArticles
+                userObject={this.state.userObject}
                 onArticleDelete={this.onArticleDelete}
                 getAllArticles={this.getAllArticles}
                 renderAllArticles={this.renderAllArticles}
