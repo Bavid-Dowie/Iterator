@@ -56,7 +56,7 @@ class UpdateArticle extends Component {
                     window.location.reload()
                 }}>
                     <div className="updatearticle__field">
-                        <label htmlFor="title">Title: </label>
+                        <label className="updatearticle__label" htmlFor="title">title</label>
                         <input onChange={this.onUpdateChange}
                             className="updatearticle__input"
                             type="text"
@@ -66,7 +66,7 @@ class UpdateArticle extends Component {
                         />
                     </div>
                     <div className="updatearticle__field">
-                        <label htmlFor="author">By: </label>
+                        <label className="updatearticle__label" htmlFor="author">author</label>
                         <input onChange={this.onUpdateChange}
                             className="updatearticle__input"
                             type="text"
@@ -76,14 +76,13 @@ class UpdateArticle extends Component {
                         />
                     </div>
                     <div className="updatearticle__field">
-                        <label htmlFor="content">Article Body: </label>
+                        <label className="updatearticle__label" htmlFor="content">article content</label>
                         <textarea onChange={this.onUpdateChange}
                             className="updatearticle__input"
                             type="text"
                             name="content"
                             placeholder="update text here"
                             value={this.state.content}>
-                            hello
                             </textarea>
                     </div>
                     <button type="submit" className="updatearticle__submit--button">Submit</button>
