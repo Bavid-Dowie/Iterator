@@ -32,9 +32,15 @@ class Article extends Component {
   render() {
     return (
       <div className="article__page">
-        <Link to={`/users/${this.props.userObject.username}`}><img className="article__logo" alt="Iterator logo" src={Logo} /></Link>
-        <Link to={`/users/${this.props.userObject.username}`}><button>Back to Profile</button></Link>
-        <Link to='/articles'><button>Back to Community</button></Link>
+      <div className="article__header">
+      <div className="article__header_logo">
+      <img className="article__logo" alt="Iterator logo" src={Logo} />
+      </div>
+      <div className="article__header__buttons">
+      <Link to={`/users/${this.props.userObject.username}`}><button>Back to Profile</button></Link>
+      <Link to='/articles'><button>Back to Community</button></Link>
+      </div>
+      </div>
 
         <div className="article__page-details">
           <div className="article__page-title">{this.state.article.title}</div>

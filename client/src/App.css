@@ -432,6 +432,20 @@ a {
     font-size: 10pt;
 }
 
+.article__header {
+    justify-content: space-between;
+}
+
+.article__header_logo {
+    float: left;
+    margin-right: 25%;
+}
+
+.article__header__buttons {
+    float: right;
+    margin-left: 25%;
+}
+
 .articles__banner-photo {
     background-position: center;
     height: 25rem;
@@ -503,6 +517,8 @@ a {
     justify-content: center;
     align-self: center;
     text-align: center;
+    padding-top: 7%;
+    margin: 30%;
 } 
 
 .article__page-content {
