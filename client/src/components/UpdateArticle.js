@@ -45,8 +45,9 @@ class UpdateArticle extends Component {
     render() {
         return (
             <div className={this.props.userObject.id === this.props.article.userId ? "updatearticle__container" : "hide"}>
-                <h2 className="updatearticle__title">Update Your Article</h2>
+                <div className="updatearticle__title">Update Your Article</div>
                 <form className="updatearticle__form" onSubmit={async (e) =>{
+
                     await this.onUpdateSubmit(e)
                     this.setState({
                         title: "",
