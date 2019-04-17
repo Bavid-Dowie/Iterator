@@ -41,11 +41,11 @@ class CreateArticle extends Component {
 
     render() {
         return (
-            <div className="userprofile__createarticle--field">
-                <h2>Create A New Article</h2>
+            <div className="userprofile__createarticle--container">
+                <div className="userprofile__createarticle-title">Create A New Article</div>
                 <form className="userprofile__createarticle--form" onSubmit={this.onArticleSubmit} id="userArticle">
-                    <div className="field">
-                        <label htmlFor="title">Title: </label>
+                    <div className="userprofile__createarticle--field">
+                        <label htmlFor="title" className="userprofile__createarticle--label">title</label>
                         <input onChange={this.onArticleCreate}
                             className="input"
                             type="text"
@@ -55,8 +55,8 @@ class CreateArticle extends Component {
                             required
                         />
                     </div>
-                    <div className="field">
-                        <label htmlFor="author">By: </label>
+                    <div className="userprofile__createarticle--field">
+                        <label htmlFor="author" className="userprofile__createarticle--label">author</label>
                         <input onChange={this.onArticleCreate}
                             className="input"
                             type="text"
@@ -66,8 +66,8 @@ class CreateArticle extends Component {
                             required
                         />
                     </div>
-                    <div className="field">
-                        <label htmlFor="content">Article Body: </label>
+                    <div className="userprofile__createarticle--field">
+                        <label htmlFor="content" className="userprofile__createarticle--label">article content</label>
                         <textarea onChange={this.onArticleCreate}
                             className="input"
                             type="text"
