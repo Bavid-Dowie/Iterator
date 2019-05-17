@@ -51,7 +51,7 @@ app.get('/articles', async (req, res) => {
 app.get('/users/:username', async (req, res) => {
     try {
         const username = req.params.username
-        const oneUser = await User.findAll({where: {username: username}})
+        const oneUser = await User.findOne({where: {username: username}})
         if (!oneUser) throw Error ('User not found')
         res.json(oneUser)
     } catch (error) {
