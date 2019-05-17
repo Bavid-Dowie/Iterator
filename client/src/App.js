@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route, Link, Redirect } from 'react-router-dom'
+import { Switch, Route, Link, Redirect, withRouter } from 'react-router-dom'
 import Article from './components/Article'
 import Homepage from './components/Homepage'
 import AllArticles from './components/AllArticles'
@@ -31,6 +31,19 @@ class App extends Component {
     this.logOut = this.logOut.bind(this)
     this.renderUserArticles = this.renderUserArticles.bind(this)
     this.getUserArticles = this.getUserArticles.bind(this)
+    this.getUser = this.getUser.bind(this)
+    this.readUser = this.readUser.bind(this)
+  }
+
+  
+  readUser (username) {
+    return fetch(`https://iterator.herokuapp.com/users/${username}`)
+    .then(resp => resp.json())
+  }
+
+  async getUser() {
+    const user = await this.readUser(this.state.userObject.username)
+    this.setState({userObject: user[0]})
   }
 
   decodeToken(token) {
@@ -66,12 +79,16 @@ class App extends Component {
       .then(json => this.setState({articles: json}))
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.getAllArticles()
     const token = localStorage.getItem('jwt')
     if (token) {
-      const decodedToken = decode(token)
+      const decodedToken = await decode(token)
       this.setState({ userObject: decodedToken })
+    }
+    if (this.state.userObject) {
+      await this.getUser()
+      this.getUserArticles()
     }
   }
 
@@ -131,6 +148,7 @@ class App extends Component {
     this.setState({
       userObject: null
     })
+    this.props.history.push('/home')
   }
 
   render() {
@@ -205,4 +223,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

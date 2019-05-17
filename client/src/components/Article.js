@@ -32,28 +32,31 @@ class Article extends Component {
   render() {
     return (
       <div className="article__page">
-      <div className="article__header">
-      <div className="article__header_logo">
-      <img className="article__logo" alt="Iterator logo" src={Logo} />
-      </div>
-      <div className="article__header__buttons">
-      <Link to={`/users/${this.props.userObject.username}`}><button>Back to Profile</button></Link>
-      <Link to='/articles'><button>Back to Community</button></Link>
-      </div>
-      </div>
+      {this.props.userObject && 
+        <React.Fragment>
+          <div className="article__header">
+          <div className="article__header_logo">
+          <img className="article__logo" alt="Iterator logo" src={Logo} />
+          </div>
+          <div className="article__header__buttons">
+          <Link to={`/users/${this.props.userObject.username}`}><button>Back to Profile</button></Link>
+          <Link to='/articles'><button>Back to Community</button></Link>
+          </div>
+          </div>
 
-        <div className="article__page-details">
-          <div className="article__page-title">{this.state.article.title}</div>
-          <p className="article__page-author">by {this.state.article.author}</p>
-          <div className="article__page-content">{this.state.article.content}</div>
-        </div>
-        <UpdateArticle id={this.props.match.params.id} userObject={this.props.userObject} article={this.state.article} getArticle={this.getArticle}/>
-        <button id={this.state.article.id} className={this.props.userObject.id === this.state.article.userId ? "article__delete--btn" : "hide"} 
-        onClick={(e => {
-          this.props.onArticleDelete(e)
-          this.props.history.push(`/users/${this.props.userObject.username}`)
-        })}>Delete Article</button>
-        <Footer />
+          <div className="article__page-details">
+            <div className="article__page-title">{this.state.article.title}</div>
+            <p className="article__page-author">by {this.state.article.author}</p>
+            <div className="article__page-content">{this.state.article.content}</div>
+          </div>
+            <UpdateArticle id={this.props.match.params.id} userObject={this.props.userObject} article={this.state.article} getArticle={this.getArticle}/>
+            <button id={this.state.article.id} className={this.props.userObject.id === this.state.article.userId ? "article__delete--btn" : "hide"} 
+            onClick={(e => {
+              this.props.onArticleDelete(e)
+              this.props.history.push(`/users/${this.props.userObject.username}`)
+            })}>Delete Article</button>
+            <Footer />
+        </React.Fragment>}
       </div>
     )
   }
