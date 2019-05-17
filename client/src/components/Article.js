@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import UpdateArticle from './UpdateArticle';
 import Footer from './Footer'
 import Logo from '../images/logo-dark.png'
 
 const url = 'https://iterator.herokuapp.com/articles/'
+const token = localStorage.getItem('jwt')
 
 class Article extends Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class Article extends Component {
   render() {
     return (
       <div className="article__page">
+      {!token && <Redirect to="/home" />}
       {this.props.userObject && 
         <React.Fragment>
           <div className="article__header">

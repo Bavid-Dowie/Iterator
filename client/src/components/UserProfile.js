@@ -17,7 +17,7 @@ class UserProfile extends Component {
     return (
     
       <div className="userprofile__body">
-      {/* {!this.props.userObject && <Redirect to="/home" />} */}
+      {!this.props.userObject && <Redirect to="/home" />}
       {this.props.userObject && 
         <React.Fragment>
         <div className="userprofile__topnav">
