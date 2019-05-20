@@ -4,9 +4,8 @@ import articleTech from '../images/articles_test_banner.png'
 import { withRouter, Link, Redirect } from 'react-router-dom';
 import Footer from '../components/Footer'
 
-const token = localStorage.getItem('jwt')
-
 const AllArticles = (props) => {
+    const token = localStorage.getItem('jwt')
     return (
         <div className="allarticles__body">
         {!token && <Redirect to="/home" />}
