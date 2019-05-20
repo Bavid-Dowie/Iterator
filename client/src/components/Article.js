@@ -6,7 +6,7 @@ import Footer from './Footer'
 import Logo from '../images/logo-dark.png'
 
 const url = 'https://iterator.herokuapp.com/articles/'
-const token = localStorage.getItem('jwt')
+
 
 class Article extends Component {
   constructor(props) {
@@ -17,11 +17,9 @@ class Article extends Component {
   }
 
   getArticle() {
-    console.log('This works')
     fetch(`${url}${this.props.match.params.id}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         this.setState({ article: data })
       })
   }
@@ -31,6 +29,7 @@ class Article extends Component {
   }
   
   render() {
+    const token = localStorage.getItem('jwt')
     return (
       <div className="article__page">
       {!token && <Redirect to="/home" />}
